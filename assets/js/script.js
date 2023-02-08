@@ -1,7 +1,5 @@
+const nameInput = $('#search-box-name'); 
+const ingredientInput = $('#search-box-ingredient'); 
+const categoryInput = $('#search-box-category');
+const submitBtn = $('.submit-btn')
 
-$.ajax({
-    method: 'GET',
-    url: 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin'
-}).then(response => {
-    console.log(response)
-})
