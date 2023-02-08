@@ -36,16 +36,31 @@
     <h4>Cocktail Search</h4>
 
     <div class="input-group mb-3">
-      <span class="input-group-text" id="search-box-name" id="basic-addon1">Name</span>
-      <input type="text" class="form-control" placeholder="Name of the cocktail" aria-label="Username" aria-describedby="basic-addon1">
+      <span class="input-group-text" id="basic-addon1">Name</span>
+      <input type="text" class="form-control" id="search-box-name" placeholder="Name of the cocktail" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
     <div class="input-group mb-3">
-      <span class="input-group-text" id="search-box-ingredient" id="basic-addon1">Ingredient</span>
-      <input type="text" class="form-control" placeholder="Name one ingredient" aria-label="Username" aria-describedby="basic-addon1">
+      <span class="input-group-text"  id="basic-addon1">Ingredient</span>
+      <input type="text" class="form-control" id="search-box-ingredient" placeholder="Name one ingredient" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
-    <div class="input-group mb-3">
+    <label for="search-box-category">Search by category:</label>
+        <select id="search-box-category" name="name of drink">
+          <option value="Cocktail">Cocktail</option>
+          <option value="Shot">Shot</option>
+          <option value="Punch / Party">Punch / Party Drink</option>
+          <option value="Ordinary Drink">Ordinary Drink</option>
+          <option value="Beers">Beers</option>
+          <option value="Soft Drink">Soft Drink</option>
+          <option value="Other / Unknown">Other / Unknown</option>
+        </select>
+
+          
+        <button type="button" class= "submit-btn" class="btn btn-primary btn-sm">
+            <img src="./assets/images/cocktail-shaker.png">
+        
+    <!-- <div class="input-group mb-3">
       <button class="btn btn-outline-secondary dropdown-toggle" id="search-box-category" type="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</button>
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="#">Action</a></li>
@@ -57,8 +72,7 @@
       <input type="text" class="form-control" aria-label="Text input with dropdown button">
     </div>
     
-    <button type="button" class= "submit-btn" class="btn btn-primary btn-sm">
-      <img src="./assets/images/cocktail-shaker.png">
+     -->
     </button>
    
     <!-- previous code below 
@@ -70,6 +84,7 @@
         <input id="search-box-name" type="text">
         <label for="search-box-ingredient">Search by ingredient:</label>
         <input id="search-box-ingredient" type="text">
+
         <label for="search-box-category">Search by category:</label>
         <select id="search-box-category" name="name of drink">
           <option value="Cocktail">Cocktail</option>
