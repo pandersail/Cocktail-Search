@@ -15,6 +15,10 @@ Hero image - Photo by energepic.com: https://www.pexels.com/photo/selective-blur
 
 Icon - Vitaly Gorbachev https://www.flaticon.com/free-icon/cocktail_3086535?term=cocktail&page=1&position=6&origin=search&related_id=3086535
 
+cocktail shaker icon - Freepik
+
+cocktail placeholder result image - Photo by Antonio Jose Meza Cárdenas: https://www.pexels.com/photo/blue-margarita-with-lemon-2480828/
+
 
 ## plan links
 
