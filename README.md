@@ -9,6 +9,13 @@ An app to search cocktail recipes
 
 ## Issues and Solutions
 
+
+## Credits
+Hero image - Photo by energepic.com: https://www.pexels.com/photo/selective-blur-of-2-wine-glass-and-3-drinking-glass-110472/
+
+Icon - Vitaly Gorbachev https://www.flaticon.com/free-icon/cocktail_3086535?term=cocktail&page=1&position=6&origin=search&related_id=3086535
+
+
 ## plan links
 
 https://docs.google.com/document/d/1hJ2_DRDKR1Bkwy3SaHEcoUKpSbztNPSNu8W-SG_6zw4/edit
