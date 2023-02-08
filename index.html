@@ -1,22 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <!-- our stylesheet -->
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Cocktail Search</title>
-</head>
-<body>
 
-    
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <!-- our stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Cocktail Search</title>
+</head>
+
+<body>
+  <header class="jumbotron">
+
+
+  </header>
+
+  <main>
+    <section class="search-bar">
+      <h2> search bar</h2>
+      <form class="search-form">
+        <label for="search-box-name">Search by name:</label>
+        <input id="search-box-name" type="text">
+        <label for="search-box-ingredient">Search by ingredient:</label>
+        <input id="search-box-ingredient" type="text">
+        <label for="search-box-category">Search by category:</label>
+        <select id="search-box-category" name="name of drink">
+          <option value=''> add options</option>
+          <option value=''> add options</option>
+        
+        </select>
+      </form>
+    </section>
+
+    <section class="results">
+      <h2> results </h2>
+      <div class="row">
+        <div class="col"> </div>
+        <div class="col"> </div>
+        <div class="col"> </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+
+  </footer>
+
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
