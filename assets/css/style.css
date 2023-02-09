@@ -30,15 +30,35 @@ h1 {
 }
 
 /* hero */
+.img-fluid {
+border-radius: 14px;
+background: #a15fa6;
+box-shadow:  13px 13px 22px #7e4a81,
+             -13px -13px 22px #c474cb;
+}
 
 /* input area */
 label {
-padding: 10px 20px 10px 20px;
+padding-left: 20px;
+}
+
+.category {
+ color: #798a85;
+ border: 2px solid #8707ff;
+ border-radius: 10px;
+ padding: 4px 17px;
+ margin-left: 20px;
+ margin-bottom: 20px;
+ background: transparent;
+ max-width: 250px;
+}
+
+.category:active {
+ box-shadow: 2px 2px 15px #8707ff inset;
 }
 
 .search-area {
-    padding: 20px;
-
+    padding: 20px 20px 10px 20px;
 }
 
 .name-search-set {
@@ -166,7 +186,7 @@ h3 {
 }
 
 .form-control {
- color: #8707ff;
+ color: #594170;
  border: 2px solid #8707ff;
  border-radius: 10px;
  padding: 10px 25px;
