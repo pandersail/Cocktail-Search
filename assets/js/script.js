@@ -4,13 +4,31 @@ const categoryInput = $('#search-box-category');
 const submitBtn = $('.submit-btn')
 
 getURLName = (name) => {
-    name = name.toLowerCase(); 
-    return `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`
+     // standardise capitals
+    let searchWords = name.split(' ');
+    let processedWords = [];
+
+    searchWords.forEach((word) => {
+        let newWord = word.toLowerCase();
+        newWord = newWord[0].toUpperCase() + newWord.slice(1); 
+        processedWords.push(newWord);
+    })
+     let processedSearchTerm = processedWords.join('_'); 
+    return `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${processedSearchTerm}`
     // gives full info about drink
 }
 getURLIngredient = (ingredient) => {
-    ingredient = ingredient.toLowerCase();
-    ingredient = ingredient[0].toUpperCase() + ingredient.slice(1)
+      // standardise capitals
+      let searchWords = ingredient.split(' ');
+      let processedWords = [];
+  
+      searchWords.forEach((word) => {
+          let newWord = word.toLowerCase();
+          newWord = newWord[0].toUpperCase() + newWord.slice(1); 
+          processedWords.push(newWord);
+      })
+       let processedSearchTerm = processedWords.join('_'); 
+       return `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${processedSearchTerm}`
     // gives name, jpg src, and id
 }
 getURLCategory = (category) => {
@@ -31,14 +49,12 @@ const addIngredientFunc = (newRow, drink) => {
     let ingredientCol = $('<div>');
     ingredientCol.attr('class', 'col col-md-6 col-lg-4');
     let newList = $('<ul>')
-
     // there are up to 15 ingredients in the API
     for (let i = 1; i<16; i++) {
-        if (drink[`strIngreditent${i}`]) {
-            newList.append(`<li>${drink[`strIngreditent${i}`]}</li>`)
+        if (drink[`strIngredient${i}`]) {
+            newList.append(`<li>${drink[`strIngredient${i}`]}</li>`)
         }
     }
-
     ingredientCol.append(newList);
     newRow.append(ingredientCol);
 }
@@ -46,6 +62,7 @@ const addIngredientFunc = (newRow, drink) => {
 const addRecipeFucn = (newRow, drink) => {
     let recipeCol = $('<div>'); 
     recipeCol.attr('class', 'col col-md-6 col-lg-4');
+    recipeCol.append(`<p>${drink['strInstructions']}</p>`)
     newRow.append(recipeCol)
 }
 // ANGELO
@@ -73,7 +90,9 @@ submitBtn.on('click', async (event) => {
          url: getURLName(name)
         })
             for (let i = 0; i < 3; i++) {
-                IDnums.push(response['drinks'][i]['idDrink'])
+                if (response['drinks'][i]) {
+                    IDnums.push(response['drinks'][i]['idDrink'])
+                }
             }
      } else {
          if (ingredient && !category) {
