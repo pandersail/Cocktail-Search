@@ -7,14 +7,21 @@ getURLname = (name) => {
     let name = nameInput.val();
     name = name.toLowerCase(); 
     return `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`
+    // gives full info about drink
 }
 getURLingredient = (ingredient) => {
     let ingredient = ingredientInput.val();
     ingredient = ingredient.toLowerCase();
     ingredient = ingredient[0].toUpperCase() + ingredient.slice(1)
+    // gives name, jpg src, and id
 }
 getURLcategory = (category) => {
     return `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`; 
+    // gives name, jpg src, and id
+}
+getURLID = (ID) => {
+    return `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${ID}`
+    // gives full info about drink
 }
 
 const addImageFunc = (newRow, drink) => {
@@ -38,19 +45,20 @@ submitBtn.on('click', (event) => {
     event.preventDefault(); 
     let name = nameInput.val();
     let ingredient = ingredientInput.val();
-    let category = catgeoryInput.val(); 
+    let category = categoryInput.val(); 
 
     if (name) {
-        getURLname(name); 
+       let queryURL =  getURLname(name); 
     } else {
         if (ingredient && !category) {
-
+           let queryURL = getURLingredient(ingredient); 
         } else if (category && !ingredient) {
+           let queryURL = getURLcategory(category)
+        } else (catgory && ingredient) {
 
-        } else if (catgory && ingredient) {
-            
         }
     }
+
     $.ajax({
         method: 'GET',
         url: queryURL
