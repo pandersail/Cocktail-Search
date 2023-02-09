@@ -2,7 +2,9 @@ const nameInput = $('#search-box-name');
 const ingredientInput = $('#search-box-ingredient'); 
 const categoryInput = $('#search-box-category');
 const submitBtn = $('.submit-btn')
+const resultsSection = $('.results')
 
+// URL BUILDER FUNCTIONS
 getURLName = (name) => {
      // standardise capitals
     let searchWords = name.split(' ');
@@ -31,14 +33,8 @@ getURLIngredient = (ingredient) => {
        return `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${processedSearchTerm}`
     // gives name, jpg src, and id
 }
-getURLCategory = (category) => {
-    return `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`; 
-    // gives name, jpg src, and id
-}
 
-// ANGELO
-// START HERE
-// COLUMNS ADDED HERE. YOU CAN CHANGE BOOTSTRAP/OWN CLASSES 
+// BOOTSTRAP COLUMN BUILDER FUNCTIONS
 const addImageFunc = (newRow, drink) => {
      let imageCol = $('<div>')
     imageCol.attr('class', 'col col-lg-4')
@@ -65,11 +61,21 @@ const addRecipeFucn = (newRow, drink) => {
     recipeCol.append(`<p>${drink['strInstructions']}</p>`)
     newRow.append(recipeCol)
 }
-// ANGELO
-// END HERE
 
+// CLEAR FUNCTIONS
+let clearResultsFunc = () => {
+    resultsSection.empty(); 
+}
+let clearSearchFunc = () => {
+    ingredientInput.val('');
+    nameInput.val('');
+    categoryInput.val(''); 
+} 
+
+// SUBMIT CLICK LISTENER
 submitBtn.on('click', async (event) => {
     event.preventDefault(); 
+    clearResultsFunc();
     let name = nameInput.val();
     console.log('name: ' + name)
     let ingredient = ingredientInput.val();
@@ -110,7 +116,7 @@ submitBtn.on('click', async (event) => {
              // id for search by category
              let response = await $.ajax({
                 method: 'GET',
-                url: getURLCategory(category)
+                url: `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`
             });
                 for (let i = 0; i < 3; i++) {
                     IDnums.push(response['drinks'][i]['idDrink'])
@@ -130,7 +136,7 @@ submitBtn.on('click', async (event) => {
             
             let catResponse = await $.ajax({
                 method: 'GET',
-                url: getURLCategory(category)
+                url: `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`
             });
                 for (let i = 0; i < catResponse['drinks'].length; i++) {
                     catArray.push(catResponse['drinks'][i]['idDrink']); 
@@ -164,14 +170,17 @@ submitBtn.on('click', async (event) => {
                 addIngredientFunc(newRow, drink);
                 addRecipeFucn(newRow, drink); 
     
-                $('.results').append(newRow);     
+                resultsSection.append(newRow);     
         })
      })
     }
+    clearSearchFunc(); 
 })
 
+// RANDOM CLICK LISTENER
 const randomBtn = $('.random')
 randomBtn.on('click', () => {
+    clearResultsFunc(); 
    $.ajax({
     method: 'GET',
     url: 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
@@ -185,6 +194,13 @@ randomBtn.on('click', () => {
     addIngredientFunc(newRow, drink);
     addRecipeFucn(newRow, drink); 
 
-    $('.results').append(newRow);  
+    resultsSection.append(newRow);  
+    clearSearchFunc(); 
    })
+})
+
+// CLEAR CLICK LISTENER
+const clearBtn = $('.clear')
+clearBtn.on('click', () => {
+    clearResultsFunc(); 
 })
