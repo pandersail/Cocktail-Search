@@ -33,6 +33,27 @@ submitBtn.on('click', (event) => {
         method: 'GET',
         url: queryURL
     }).then(response => {
-        console.log(response); 
+        for (let i = 0; i < 3; i++) {
+            let drink = response['drinks'][i]; 
+            let newRow = $('<div>'); 
+            newRow.attr('class', 'row'); 
+
+            let imageCol = $('<div>')
+            imageCol.attr('class', 'col col-lg-4')
+            let ingredientCol = $('<div>')
+            ingredientCol.attr('class', 'col col-md-6 col-lg-4')
+            let recipeCol = ingredientCol; 
+
+            imageCol.html(`<img src=${drink['strDrinkThumb']}></img>`)
+            console.log(drink)
+            ingredientCol.html(``)
+            recipeCol.html(``)
+
+            newRow.append(imageCol)
+            newRow.append(ingredientCol)
+            newRow.append(recipeCol)
+
+            $('.results').append(newRow)
+        }
     })
 })
