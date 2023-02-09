@@ -169,3 +169,22 @@ submitBtn.on('click', async (event) => {
      })
     }
 })
+
+const randomBtn = $('.random')
+randomBtn.on('click', () => {
+   $.ajax({
+    method: 'GET',
+    url: 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
+   }).then(response => {
+    console.log(response)
+    let drink = response['drinks'][0];
+    let newRow = $('<div>'); 
+    newRow.attr('class', 'row');
+
+    addImageFunc(newRow, drink);
+    addIngredientFunc(newRow, drink);
+    addRecipeFucn(newRow, drink); 
+
+    $('.results').append(newRow);  
+   })
+})
