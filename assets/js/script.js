@@ -25,6 +25,23 @@ getURLFunc = () => {
     return queryURL; 
 }
 
+const addImageFunc = (newRow, drink) => {
+     let imageCol = $('<div>')
+    imageCol.attr('class', 'col col-lg-4')
+    imageCol.html(`<img src=${drink['strDrinkThumb']}></img>`)
+    newRow.append(imageCol)
+}
+const addIngredientFunc = (newRow, drink) => {
+    let ingredientCol = $('<div>');
+    ingredientCol.attr('class', 'col col-md-6 col-lg-4');
+    newRow.append(ingredientCol)
+}
+const addRecipeFucn = (newRow, drink) => {
+    let recipeCol = $('<div>'); 
+    recipeCol.attr('class', 'col col-md-6 col-lg-4');
+    newRow.append(recipeCol)
+}
+
 submitBtn.on('click', (event) => {
     event.preventDefault(); 
     let queryURL = getURLFunc(); 
@@ -33,25 +50,15 @@ submitBtn.on('click', (event) => {
         method: 'GET',
         url: queryURL
     }).then(response => {
+        console.log(response)
         for (let i = 0; i < 3; i++) {
             let drink = response['drinks'][i]; 
             let newRow = $('<div>'); 
-            newRow.attr('class', 'row'); 
-
-            let imageCol = $('<div>')
-            imageCol.attr('class', 'col col-lg-4')
-            let ingredientCol = $('<div>')
-            ingredientCol.attr('class', 'col col-md-6 col-lg-4')
-            let recipeCol = ingredientCol; 
-
-            imageCol.html(`<img src=${drink['strDrinkThumb']}></img>`)
-            console.log(drink)
-            ingredientCol.html(``)
-            recipeCol.html(``)
-
-            newRow.append(imageCol)
-            newRow.append(ingredientCol)
-            newRow.append(recipeCol)
+            newRow.attr('class', 'row');
+            
+            addImageFunc(newRow, drink);
+            addIngredientFunc(newRow, drink);
+            addRecipeFucn(newRow, drink); 
 
             $('.results').append(newRow)
         }
