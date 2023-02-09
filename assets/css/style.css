@@ -18,27 +18,133 @@ body {
     src: url(../fonts/Khula/Khula-Regular.ttf);
   }
 
+
+
+
+
+/* header  */
 h1 {
     font-family: Sansita;
 }
+
+/* hero */
+
+/* search */
+
+#buttons {
+    display: flex;
+    padding: 10px;
+    
+}
+
+/* random button */
+
+
+.submit-btn {
+    margin-right: 15px;
+    height: 3em;
+    width: 7em;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 0 2px #000;
+    background: #016DD9;
+    font-size: 17px;
+    color: #ffffff;
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+   }
+   
+   .submit-btn:hover {
+    animation: shake3856 0.3s linear infinite both;
+   }
+   
+   @keyframes shake3856 {
+    0% {
+     -webkit-transform: translate(0);
+     transform: translate(0);
+    }
+   
+    20% {
+     -webkit-transform: translate(-2px, 2px);
+     transform: translate(-2px, 2px);
+    }
+   
+    40% {
+     -webkit-transform: translate(-2px, -2px);
+     transform: translate(-2px, -2px);
+    }
+   
+    60% {
+     -webkit-transform: translate(2px, 2px);
+     transform: translate(2px, 2px);
+    }
+   
+    80% {
+     -webkit-transform: translate(2px, -2px);
+     transform: translate(2px, -2px);
+    }
+   
+    100% {
+     -webkit-transform: translate(0);
+     transform: translate(0);
+    }
+   }
+
+
+/* random button */
+
+.random {
+    height: 3em;
+    width: 7em;
+    background: none;
+    border: 2px solid #fff;
+    font-size: 17px;
+    color: #131313;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    border-radius: 12px;
+    background-color: #ecd448;
+    font-weight: bolder;
+    box-shadow: 0 2px 0 2px #000;
+   }
+   
+   .random:before {
+    content: "";
+    position: absolute;
+     height: 3em;
+    width: 7em;
+    background-color: #ff6700;
+    top: 50%;
+    transform: skewX(30deg) translate(-150%, -50%);
+    transition: all 0.5s;
+   }
+   
+   .random:hover {
+    background-color: #4cc9f0;
+    color: #fff;
+    box-shadow: 0 2px 0 2px #0d3b66;
+   }
+   
+   .random:hover::before {
+    transform: skewX(30deg) translate(150%, -50%);
+    transition-delay: 0.1s;
+   }
+   
+   .random:active {
+    transform: scale(0.9);
+   }
+   
 
 .navbar-brand,
 h3 {
     font-family: Convergence;
     font-size: 22px;
 }
-
-/* header  */
-
-/* hero */
-
-/* search */
-.btn-outline-primary {
-    height: 40px;
-    width: auto;
-    border: white;
-    border-radius: 40%;
-} 
 
 /* results */
 
