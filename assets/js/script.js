@@ -18,6 +18,9 @@ getURLCategory = (category) => {
     // gives name, jpg src, and id
 }
 
+// ANGELO
+// START HERE
+// COLUMNS ADDED HERE. YOU CAN CHANGE BOOTSTRAP/OWN CLASSES 
 const addImageFunc = (newRow, drink) => {
      let imageCol = $('<div>')
     imageCol.attr('class', 'col col-lg-4')
@@ -45,6 +48,8 @@ const addRecipeFucn = (newRow, drink) => {
     recipeCol.attr('class', 'col col-md-6 col-lg-4');
     newRow.append(recipeCol)
 }
+// ANGELO
+// END HERE
 
 submitBtn.on('click', async (event) => {
     event.preventDefault(); 
@@ -61,7 +66,7 @@ submitBtn.on('click', async (event) => {
         return 
     } else {
     if (name) {
-        console.warn('name only')
+        console.warn('name only'); 
         // get ids for first 3 containing search name
         let response = await $.ajax({
          method: 'GET',
@@ -125,6 +130,7 @@ submitBtn.on('click', async (event) => {
  
      console.log(IDnums); 
 
+    //  Info on page from this call
      IDnums.forEach(drinkID => {
         $.ajax({
             method: 'GET',
@@ -139,7 +145,7 @@ submitBtn.on('click', async (event) => {
                 addIngredientFunc(newRow, drink);
                 addRecipeFucn(newRow, drink); 
     
-                $('.results').append(newRow)    
+                $('.results').append(newRow);     
         })
      })
     }
