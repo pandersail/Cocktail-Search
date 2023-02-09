@@ -3,26 +3,18 @@ const ingredientInput = $('#search-box-ingredient');
 const categoryInput = $('#search-box-category');
 const submitBtn = $('.submit-btn')
 
-getURLFunc = () => {
-    let queryURL; 
-    const category = categoryInput.val();
+getURLname = (name) => {
     let name = nameInput.val();
+    name = name.toLowerCase(); 
+    return `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`
+}
+getURLingredient = (ingredient) => {
     let ingredient = ingredientInput.val();
-
-    if (category) {
-        queryURL = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`
-    }
-    if (name) {
-        name = name.toLowerCase(); 
-        queryURL = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`
-    }
-    if (ingredient) {
-        ingredient = ingredient.toLowerCase();
-        ingredient = ingredient[0].toUpperCase() + ingredient.slice(1)
-        queryURL = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`
-    }
-
-    return queryURL; 
+    ingredient = ingredient.toLowerCase();
+    ingredient = ingredient[0].toUpperCase() + ingredient.slice(1)
+}
+getURLcategory = (category) => {
+    return `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`; 
 }
 
 const addImageFunc = (newRow, drink) => {
@@ -44,8 +36,21 @@ const addRecipeFucn = (newRow, drink) => {
 
 submitBtn.on('click', (event) => {
     event.preventDefault(); 
-    let queryURL = getURLFunc(); 
+    let name = nameInput.val();
+    let ingredient = ingredientInput.val();
+    let category = catgeoryInput.val(); 
 
+    if (name) {
+        getURLname(name); 
+    } else {
+        if (ingredient && !category) {
+
+        } else if (category && !ingredient) {
+
+        } else if (catgory && ingredient) {
+            
+        }
+    }
     $.ajax({
         method: 'GET',
         url: queryURL
@@ -53,6 +58,7 @@ submitBtn.on('click', (event) => {
         console.log(response)
         for (let i = 0; i < 3; i++) {
             let drink = response['drinks'][i]; 
+            console.log(drink)
             let newRow = $('<div>'); 
             newRow.attr('class', 'row');
             
