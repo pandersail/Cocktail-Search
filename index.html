@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <!-- bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <!-- font awesome -->
@@ -33,8 +33,11 @@
 
   <main>
     <section class="search">
-
-    <h4>Cocktail Search</h4>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <h3 class="navbar-brand mb-0 h1">Search</h3>
+        </div>
+      </nav>
 
     <div class="input-group mb-3">
       <span class="input-group-text" id="basic-addon1">Name</span>
@@ -48,6 +51,7 @@
 
     <label for="search-box-category">Search by category:</label>
         <select id="search-box-category" name="name of drink">
+          <option value="null">Select Option</option>
           <option value="Cocktail">Cocktail</option>
           <option value="Shot">Shot</option>
           <option value="Punch / Party Drink">Punch / Party Drink</option>
@@ -56,21 +60,34 @@
           <option value="Soft_Drink">Soft Drink</option>
           <option value="Other / Unknown">Other / Unknown</option>
           <!-- Please could you add a null option with value = '' 
-            as the top option for no category selected -->
+            as the top option for no category selected // Done, let me know if ok-->
         </select>
           
-    <br><button type="button" class= "submit-btn" class="btn btn-primary btn-sm">
-       <img src="./assets/images/cocktail-shaker.png">
+    <br><button type="button" class="submit-btn" >
+       <img src="./assets/images/shaker.gif" class="btn btn-outline-primary">
     </button>
+    <button type="button" class="random" >
+      <img src="./assets/images/random.gif" class="btn btn-outline-primary">
+   </button>
     </section>
 
     <section class="results">
-      <h4> Results </h4>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <h4 class="visibility" class="navbar-brand mb-0 h1">Results</h4>
+        </div>
+      </nav>
     </section>
   </main>
 
-  <footer>
-
+  <footer> <!-- to include icons or text with href, GitHub, Contact...-->
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24">
+        </a>
+      </div>
+    </nav>
   </footer>
 
   <!-- jQuery -->

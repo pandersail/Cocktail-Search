@@ -1,0 +1,21 @@
+/* global */
+body {
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #70ff8e 100%);
+}
+
+/* header  */
+
+/* hero */
+
+/* search */
+.btn-outline-primary {
+    height: 40px;
+    width: auto;
+    border: white;
+    border-radius: 40%;
+} 
+
+/* results */
+
+/* footer */
