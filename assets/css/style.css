@@ -1,7 +1,31 @@
 /* global */
 body {
-    background-color: #4158D0;
-    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #70ff8e 100%);
+    background-image: linear-gradient( 64.5deg,  rgba(245,116,185,1) 14.7%, rgba(89,97,223,1) 88.7% );
+    font-size: 16px;
+    font-family: Khula;
+}
+@font-face {
+    font-family: Convergence;
+    src: url(../fonts/Convergence/Convergence-Regular.ttf);
+  }
+@font-face {
+    font-family: Sansita;
+    src: url(../fonts/Sansita/Sansita-Bold.ttf);
+  }
+
+  @font-face {
+    font-family: Khula;
+    src: url(../fonts/Khula/Khula-Regular.ttf);
+  }
+
+h1 {
+    font-family: Sansita;
+}
+
+.navbar-brand,
+h3 {
+    font-family: Convergence;
+    font-size: 22px;
 }
 
 /* header  */
