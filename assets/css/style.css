@@ -3,6 +3,7 @@ body {
     background-image: linear-gradient( 64.5deg,  rgba(245,116,185,1) 14.7%, rgba(89,97,223,1) 88.7% );
     font-size: 16px;
     font-family: Khula;
+    color: #ffffff;
 }
 @font-face {
     font-family: Convergence;
@@ -25,16 +26,32 @@ body {
 /* header  */
 h1 {
     font-family: Sansita;
+    color: #c0fc51;
 }
 
 /* hero */
 
-/* search */
+/* input area */
+label {
+padding: 10px 20px 10px 20px;
+}
+
+.search-area {
+    padding: 20px;
+
+}
+
+.name-search-set {
+   padding-bottom: 15px;
+}
+
+.ingredient-search-set {
+    padding-left: 20px;
+}
 
 #buttons {
     display: flex;
     padding: 10px;
-    
 }
 
 /* random button */
@@ -47,11 +64,11 @@ h1 {
     border: 2px solid #fff;
     border-radius: 12px;
     box-shadow: 0 2px 0 2px #000;
-    background: #016DD9;
+    background: #f0a1ed;
     font-size: 17px;
     color: #ffffff;
     font-family: inherit;
-    font-weight: 500;
+    font-weight: 900;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -59,6 +76,7 @@ h1 {
    
    .submit-btn:hover {
     animation: shake3856 0.3s linear infinite both;
+    color: #c0fc51;
    }
    
    @keyframes shake3856 {
@@ -102,14 +120,14 @@ h1 {
     background: none;
     border: 2px solid #fff;
     font-size: 17px;
-    color: #131313;
+    color: #ffffff;
     cursor: pointer;
     position: relative;
     overflow: hidden;
     transition: all 0.3s;
     border-radius: 12px;
-    background-color: #ecd448;
-    font-weight: bolder;
+    background-color: #c188f3;
+    font-weight:900;
     box-shadow: 0 2px 0 2px #000;
    }
    
@@ -126,7 +144,7 @@ h1 {
    
    .random:hover {
     background-color: #4cc9f0;
-    color: #fff;
+    color: #c0fc51;
     box-shadow: 0 2px 0 2px #0d3b66;
    }
    
@@ -139,11 +157,25 @@ h1 {
     transform: scale(0.9);
    }
    
-
+/* font */
 .navbar-brand,
 h3 {
     font-family: Convergence;
     font-size: 22px;
+    color: #f4e923;
+}
+
+.form-control {
+ color: #8707ff;
+ border: 2px solid #8707ff;
+ border-radius: 10px;
+ padding: 10px 25px;
+ background: transparent;
+ max-width: 250px;
+}
+
+.form-control:active {
+ box-shadow: 2px 2px 15px #8707ff inset;
 }
 
 /* results */

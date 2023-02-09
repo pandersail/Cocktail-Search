@@ -42,17 +42,18 @@
         </div>
       </nav>
 
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1">Name</span>
-      <input type="text" class="form-control" id="search-box-name" placeholder="Name of the cocktail" aria-label="Username" aria-describedby="basic-addon1">
+    <div class="search-area">
+      <div class="name-search-set">
+        <span><strong>Name</span></strong>
+        <br><input type="text" class="form-control" id="search-box-name" placeholder="Name of the cocktail" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      <div class="ingredient-search-set"></div>
+        <span><strong>Ingredient</span></strong>
+        <br><input type="text" class="form-control" id="search-box-ingredient" placeholder="Name one ingredient" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
     </div>
 
-    <div class="input-group mb-3">
-      <span class="input-group-text"  id="basic-addon1">Ingredient</span>
-      <input type="text" class="form-control" id="search-box-ingredient" placeholder="Name one ingredient" aria-label="Username" aria-describedby="basic-addon1">
-    </div>
-
-    <label for="search-box-category">Search by category:</label>
+    <label for="search-box-category"><strong>Search by category:</strong></label>
         <select id="search-box-category" name="name of drink">
           <option value="null">Select Option</option>
           <option value="Cocktail">Cocktail</option>
