@@ -334,7 +334,11 @@ display: block;
 
 
 /* footer */
-
+#github {
+    width: 2em;
+    height: auto;
+    margin: auto;
+}
 
 
 
