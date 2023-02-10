@@ -28,6 +28,7 @@ h1 {
     display: flex;
     font-family: Sansita;
     color: #c0fc51;
+    text-shadow: 2px 4px 4px #1bd69e;
     margin-top: auto;
     margin-bottom: auto;
     align-items: center;
@@ -37,6 +38,42 @@ h1 img {
     height: 70px;
     width: auto;
 }
+
+h1 img:hover {
+    animation: shake3856 0.3s linear infinite both;
+   }
+   
+   @keyframes shake3856 {
+    0% {
+     -webkit-transform: translate(0);
+     transform: translate(0);
+    }
+   
+    20% {
+     -webkit-transform: translate(-2px, 2px);
+     transform: translate(-2px, 2px);
+    }
+   
+    40% {
+     -webkit-transform: translate(-2px, -2px);
+     transform: translate(-2px, -2px);
+    }
+   
+    60% {
+     -webkit-transform: translate(2px, 2px);
+     transform: translate(2px, 2px);
+    }
+   
+    80% {
+     -webkit-transform: translate(2px, -2px);
+     transform: translate(2px, -2px);
+    }
+   
+    100% {
+     -webkit-transform: translate(0);
+     transform: translate(0);
+    }
+   }
 
 /* hero */
 .img-fluid {
@@ -278,7 +315,7 @@ input::before {
 /* results */
  .results {
     margin-top: 30px;
-    padding-right: 60px;
+    padding-right: 40px;
 } 
 
 .results img /* image output settings */ {
@@ -298,6 +335,10 @@ display: block;
 
 /* footer */
 
+
+
+
+/* Miscellaneous */
 @media (min-width: 768px) {
     .img-fluid  {
         display: block;
