@@ -72,7 +72,7 @@ const addRecipeFucn = (newRow, drink) => {
     favBtn.attr('class', 'favourite-btn'); 
     favBtn.attr('data-id', drink['idDrink']); 
     favBtn.attr('data-name', drink['strDrink']); 
-    favBtn.html('<i class="fa fa-solid fa-heart"></i>Favourite'); 
+    // favBtn.html('<i class="fa fa-solid fa-heart"></i>Favourite'); 
  
     recipeCol.append(`<p>${drink['strInstructions']}</p>`); 
     recipeCol.append(favBtn); 

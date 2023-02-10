@@ -376,6 +376,16 @@ display: block;
 
 }
 
+.favourite-btn {
+    background-image:url(../images/favourite.png);
+    width: 2em;
+    height: 2em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 0;
+    border-radius: 50%;
+
+}
 
 
 /* footer */
