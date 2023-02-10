@@ -384,8 +384,33 @@ display: block;
     background-size: contain;
     border: 0;
     border-radius: 50%;
-
 }
+
+.btn-primary {
+        padding: 8px 20px;
+        border-radius: 10px;
+        margin: 30px 5px 15px 20px;
+        border: 0;
+        background-color: #4cc9f0;
+        letter-spacing: 1.5px;
+        font-size: 15px;
+        transition: all .3s ease;
+        box-shadow: #257189 0px 10px 0px 0px;
+        color: hsl(0, 0%, 100%);
+        font-weight: bolder;
+       }
+       
+       .btn-primary:hover {
+        box-shadow: #257189 0px 7px 0px 0px;
+       }
+       
+       .btn-primary:active {
+        background-color: #4cc9f0;
+        /*50, 168, 80*/
+        box-shadow: #257189 0px 0px 0px 0px;
+        transform: translateY(5px);
+        transition: 200ms;
+       }
 
 
 /* footer */
