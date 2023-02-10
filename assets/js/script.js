@@ -69,6 +69,7 @@ const addRecipeFucn = (newRow, drink) => {
     let favBtn = $('<button>');
     favBtn.attr('type', 'button');
     favBtn.attr('class', 'favourite-btn'); 
+    favBtn.attr('data-id', drink['idDrink']); 
     favBtn.html('<i class="fa fa-solid fa-heart"></i>Favourite'); 
  
     recipeCol.append(favBtn); 
