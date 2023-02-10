@@ -26,7 +26,6 @@ body {
 
 
 
-
 /* header  */
 h1 {
     display: flex;
@@ -179,8 +178,8 @@ padding-left: 20px;
    .submit-btn:hover {
     animation: shake3856 0.3s linear infinite both;
     color: #c0fc51;
-    cursor: url(../images/cocktails-2.png), auto;
-    cursor: url(../images/cocktails-2.png) 15 15, move;
+    cursor: url(../images/cursor.png), auto;
+    cursor: url(../images/cursor.png) 15 15, move;
    }
    
    @keyframes shake3856 {
@@ -250,8 +249,8 @@ padding-left: 20px;
     background-color: #4cc9f0;
     color: #c0fc51;
     box-shadow: 0 2px 0 2px #0d3b66;
-    cursor: url(../images/cocktails-2.png), auto;
-    cursor: url(../images/cocktails-2.png) 15 15, move;
+    cursor: url(../images/cursor.png), auto;
+    cursor: url(../images/cursor.png) 15 15, move;
    }
    
    .random:hover::before {
