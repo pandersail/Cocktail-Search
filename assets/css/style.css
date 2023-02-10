@@ -282,3 +282,21 @@ input::before {
 
 
 /* footer */
+
+@media (min-width: 768px) {
+    .img-fluid  {
+        display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+}
+
+@media (min-width: 1250px) {
+    .img-fluid  {
+        display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+    }
+    }
