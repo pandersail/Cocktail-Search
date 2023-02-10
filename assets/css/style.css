@@ -131,6 +131,20 @@ padding-left: 20px;
 
 }
 
+/*placeholder text colour*/
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #1bd69e !important;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #1bd69e !important;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #1bd69e !important;
+  }
+
 /* random button */
 #buttons {
     display: flex;
