@@ -1,6 +1,7 @@
 const nameInput = $('#search-box-name'); 
 const ingredientInput = $('#search-box-ingredient'); 
 const categoryInput = $('#search-box-category');
+const numberInput = $('#number-input')
 const submitBtn = $('.submit-btn')
 const resultsSection = $('.results')
 
@@ -115,6 +116,8 @@ submitBtn.on('click', async (event) => {
     let category = categoryInput.val(); 
     console.log('category: ' + category)
     let IDnums = []; 
+    let numberOfResponses = numberInput.val();
+    console.log(numberOfResponses);
 
     if (!name && !ingredient && !category) {
         console.warn('!name && !ingredient && !category')
@@ -122,12 +125,12 @@ submitBtn.on('click', async (event) => {
     } else {
     if (name) {
         console.warn('name only'); 
-        // get ids for first 3 containing search name
+        // get ids for first i results containing search name
         let response = await $.ajax({
          method: 'GET',
          url: getURLName(name)
         })
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < numberOfResponses; i++) {
                 if (response['drinks'][i]) {
                     IDnums.push(response['drinks'][i]['idDrink'])
                 }
@@ -140,7 +143,7 @@ submitBtn.on('click', async (event) => {
                 method: 'GET',
                 url: getURLIngredient(ingredient)
             });
-                for (let i = 0; i < 3; i++) {
+                for (let i = 0; i < numberOfResponses; i++) {
                     IDnums.push(response['drinks'][i]['idDrink'])
                 }
          } else if (category && !ingredient) {
@@ -150,7 +153,7 @@ submitBtn.on('click', async (event) => {
                 method: 'GET',
                 url: `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`
             });
-                for (let i = 0; i < 3; i++) {
+                for (let i = 0; i < numberOfResponses; i++) {
                     IDnums.push(response['drinks'][i]['idDrink'])
                 }
          } else {
@@ -179,8 +182,8 @@ submitBtn.on('click', async (event) => {
                     IDnums.push(item);
                 }
             }) 
-            if (IDnums.length > 3) {
-                IDnums = IDnums.splice(0,2); 
+            if (IDnums.length > numberOfResponses) {
+                IDnums = IDnums.splice(0,numberOfResponses - 1); 
             }
          } 
      }
@@ -228,15 +231,17 @@ let renderFavBtn = () => {
     favouritesBar.empty(); 
     let IDArray = JSON.parse(localStorage.getItem('favouriteIDs'));
 
-    IDArray.forEach(drink => {
-        let newBtn = $('<button>');
-        newBtn.attr('class', 'button btn-primary'); 
-        newBtn.attr('data-id', drink['storedID']); 
-        newBtn.text(drink['storedName']); 
+    if (IDArray) {
+        IDArray.forEach(drink => {
+            let newBtn = $('<button>');
+            newBtn.attr('class', 'button btn-primary'); 
+            newBtn.attr('data-id', drink['storedID']); 
+            newBtn.text(drink['storedName']); 
+        
     
-
-        favouritesBar.prepend(newBtn); 
-    })
+            favouritesBar.prepend(newBtn); 
+        })
+    }
 }
 
 // NEW STORAGE - NEW FAV BUTTON CLICK LISTENER
@@ -285,7 +290,6 @@ favouritesBar.on('click', event => {
         newRowAjax(button.attr('data-id'))
     }
 });
-
 
 // CLEAR FAV CLICK LISTENER
 const clearFavBtn = $('.clear-favourites');
