@@ -28,6 +28,7 @@ h1 {
     display: flex;
     font-family: Sansita;
     color: #c0fc51;
+    text-shadow: 2px 4px 4px #1bd69e;
     margin-top: auto;
     margin-bottom: auto;
     align-items: center;
@@ -298,6 +299,10 @@ display: block;
 
 /* footer */
 
+
+
+
+/* Miscellaneous */
 @media (min-width: 768px) {
     .img-fluid  {
         display: block;
