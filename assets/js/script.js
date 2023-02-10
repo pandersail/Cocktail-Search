@@ -218,8 +218,8 @@ randomBtn.on('click', () => {
 })
 
 // CLEAR CLICK LISTENER
-const resetBtn = $('.reset')
-resetBtn.on('click', () => {
+const clearResultsBtn = $('.clear-results')
+clearResultsBtn.on('click', () => {
     resultsSection.empty(); 
 })
 
@@ -234,7 +234,8 @@ let renderFavBtn = () => {
         newBtn.attr('data-id', drink['storedID']); 
         newBtn.text(drink['storedName']); 
     
-        favouritesBar.append(newBtn); 
+
+        favouritesBar.prepend(newBtn); 
     })
 }
 
@@ -284,6 +285,14 @@ favouritesBar.on('click', event => {
         newRowAjax(button.attr('data-id'))
     }
 });
+
+
+// CLEAR FAV CLICK LISTENER
+const clearFavBtn = $('.clear-favourites');
+clearFavBtn.on('click', () => {
+    localStorage.removeItem('favouriteIDs');
+    renderFavBtn(); 
+})
 
 // runs when page loads
 renderFavBtn(); 

@@ -228,7 +228,7 @@ padding-left: 20px;
    }
 
    /* reset button */
-.reset {
+.clear-results {
  height: 3em;
     width: 7em;
  margin-left: 15px;
@@ -242,7 +242,7 @@ padding-left: 20px;
  font-size: 17px;
 }
 
-.reset:hover {
+.clear-results:hover {
  background: #c0fc51;
  color: #ffffff;
  animation: squeeze3124 0.9s both;
