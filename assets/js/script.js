@@ -35,17 +35,20 @@ getURLIngredient = (ingredient) => {
 }
 
 // BOOTSTRAP COLUMN BUILDER FUNCTIONS
+// 1st column - image
 const addImageFunc = (newRow, drink) => {
      let imageCol = $('<div>')
     imageCol.attr('class', 'col col-lg-4')
     imageCol.html(`<img src=${drink['strDrinkThumb']}></img>`)
     newRow.append(imageCol)
 }
+// 2nd column - title, ingredients list
 const addIngredientFunc = (newRow, drink) => {
-    let title = $('<h4>');
-    title.text(drink['strDrink']);
     let ingredientCol = $('<div>');
     ingredientCol.attr('class', 'col col-md-6 col-lg-4');
+
+    let title = $('<h4>');
+    title.text(drink['strDrink']);
 
     let newList = $('<ul>')
     // there are up to 15 ingredients in the API
@@ -58,18 +61,22 @@ const addIngredientFunc = (newRow, drink) => {
     ingredientCol.append(newList);
     newRow.append(ingredientCol);
 }
-
+// 3rd column - fav btn, recipe
 const addRecipeFucn = (newRow, drink) => {
     let recipeCol = $('<div>'); 
     recipeCol.attr('class', 'col col-md-6 col-lg-4');
+
+    let favBtn = $('<button>');
+    favBtn.attr('type', 'button');
+    favBtn.attr('class', 'favourite-btn'); 
+    favBtn.html('<i class="fa fa-solid fa-heart"></i>Favourite'); 
+ 
+    recipeCol.append(favBtn); 
     recipeCol.append(`<p>${drink['strInstructions']}</p>`); 
     newRow.append(recipeCol); 
 }
 
-// CLEAR FUNCTIONS
-let clearResultsFunc = () => {
-    resultsSection.empty(); 
-}
+// CLEAR SEARCH FUNCTION
 let clearSearchFunc = () => {
     ingredientInput.val('');
     nameInput.val('');
@@ -79,7 +86,7 @@ let clearSearchFunc = () => {
 // SUBMIT CLICK LISTENER
 submitBtn.on('click', async (event) => {
     event.preventDefault(); 
-    clearResultsFunc();
+    resultsSection.empty();
     let name = nameInput.val();
     console.log('name: ' + name)
     let ingredient = ingredientInput.val();
@@ -184,7 +191,7 @@ submitBtn.on('click', async (event) => {
 // RANDOM CLICK LISTENER
 const randomBtn = $('.random')
 randomBtn.on('click', () => {
-    clearResultsFunc(); 
+    resultsSection.empty();
    $.ajax({
     method: 'GET',
     url: 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
@@ -206,5 +213,5 @@ randomBtn.on('click', () => {
 // CLEAR CLICK LISTENER
 const resetBtn = $('.reset')
 resetBtn.on('click', () => {
-    clearResultsFunc(); 
+    resultsSection.empty(); 
 })
