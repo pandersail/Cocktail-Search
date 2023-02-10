@@ -58,8 +58,8 @@ const addIngredientFunc = (newRow, drink) => {
 const addRecipeFucn = (newRow, drink) => {
     let recipeCol = $('<div>'); 
     recipeCol.attr('class', 'col col-md-6 col-lg-4');
-    recipeCol.append(`<p>${drink['strInstructions']}</p>`)
-    newRow.append(recipeCol)
+    recipeCol.append(`<p>${drink['strInstructions']}</p>`); 
+    newRow.append(recipeCol); 
 }
 
 // CLEAR FUNCTIONS
@@ -200,7 +200,7 @@ randomBtn.on('click', () => {
 })
 
 // CLEAR CLICK LISTENER
-const clearBtn = $('.clear')
-clearBtn.on('click', () => {
+const resetBtn = $('.reset')
+resetBtn.on('click', () => {
     clearResultsFunc(); 
 })
