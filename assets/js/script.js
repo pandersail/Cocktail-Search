@@ -42,8 +42,11 @@ const addImageFunc = (newRow, drink) => {
     newRow.append(imageCol)
 }
 const addIngredientFunc = (newRow, drink) => {
+    let title = $('<h4>');
+    title.text(drink['strDrink']);
     let ingredientCol = $('<div>');
     ingredientCol.attr('class', 'col col-md-6 col-lg-4');
+
     let newList = $('<ul>')
     // there are up to 15 ingredients in the API
     for (let i = 1; i<16; i++) {
@@ -51,6 +54,7 @@ const addIngredientFunc = (newRow, drink) => {
             newList.append(`<li>${drink[`strIngredient${i}`]}</li>`)
         }
     }
+    ingredientCol.append(title); 
     ingredientCol.append(newList);
     newRow.append(ingredientCol);
 }
