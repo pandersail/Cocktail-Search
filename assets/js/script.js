@@ -73,8 +73,8 @@ const addRecipeFucn = (newRow, drink) => {
     favBtn.attr('data-name', drink['strDrink']); 
     favBtn.html('<i class="fa fa-solid fa-heart"></i>Favourite'); 
  
-    recipeCol.append(favBtn); 
     recipeCol.append(`<p>${drink['strInstructions']}</p>`); 
+    recipeCol.append(favBtn); 
     newRow.append(recipeCol); 
 }
 
@@ -223,19 +223,56 @@ resetBtn.on('click', () => {
     resultsSection.empty(); 
 })
 
-// NEW FAVOURITE CLICK LISTENER
-const favouritesBar = $('#favourites-bar')
-resultsSection.on('click', event => {
-    let clicked = $(event.target); 
+// DISPLAY FAV BUTTONS
+let renderFavBtn = () => {
+    favouritesBar.empty(); 
+    let IDArray = JSON.parse(localStorage.getItem('favouriteIDs'));
 
-    if (clicked.attr('data-id')) {
+    IDArray.forEach(drink => {
         let newBtn = $('<button>');
         newBtn.attr('class', 'button btn-primary'); 
-        newBtn.attr('data-id', clicked.attr('data-id'))
-        newBtn.text(clicked.attr('data-name')); 
-
+        newBtn.attr('data-id', drink['storedID']); 
+        newBtn.text(drink['storedName']); 
+    
         favouritesBar.append(newBtn); 
+    })
+}
+
+// NEW STORAGE - NEW FAV BUTTON CLICK LISTENER
+const favouritesBar = $('#favourites-bar')
+resultsSection.on('click', (event) => {
+    let clicked = $(event.target); 
+    let newID = clicked.attr('data-id');
+    let newName = clicked.attr('data-name'); 
+
+    if (newID) {
+    let localInfo = JSON.parse(localStorage.getItem('favouriteIDs')); 
+    if (localInfo) {
+        // prevent duplicates
+        let duplicateIndex = 'NaN';
+        localInfo.forEach((item, i) => {
+            if (item['storedID'] === newID) {
+                // index of duplicate in array
+                duplicateIndex = i; 
+            }
+        })
+        // move old button and move to left
+        if (duplicateIndex !== 'NaN') {
+            localInfo.splice(duplicateIndex, 1); 
+         }
+              // max of 5 favs
+         if(localInfo.length >= 5) {
+             // remove oldest button, make room for new one 
+                 localInfo.shift(); 
+             }
+             localInfo.push({'storedID': newID, 'storedName': newName}); 
+             localStorage.setItem('favouriteIDs', JSON.stringify(localInfo));   
+         } else {
+        let newStorage = [{'storedID': newID, 'storedName': newName}]; 
+        localStorage.setItem('favouriteIDs', JSON.stringify(newStorage))
     }
+    renderFavBtn(); 
+}
 })
 
 // FAVOURITE BTN CLICK LISTENER
@@ -246,4 +283,7 @@ favouritesBar.on('click', event => {
         resultsSection.empty();
         newRowAjax(button.attr('data-id'))
     }
-})
+});
+
+// runs when page loads
+renderFavBtn(); 
