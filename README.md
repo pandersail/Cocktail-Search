@@ -5,6 +5,8 @@ An app to search cocktail recipes
 
 ## Link to site
 
+https://daisyeverard.github.io/Cocktail-Search/
+
 ## Description
 
 ## Issues and Solutions
@@ -13,7 +15,7 @@ An app to search cocktail recipes
 
 Hani Ahmed, Clarissa Cole, Angelo Silva, Daisy Everard
 
-Please Note - Some members of out team were unable to attend all of the project sessions, so in some places there is an uneven balance of commits. 
+Please Note - Some members of our team were unable to attend all of the project sessions, so in some places there is an uneven balance of commits. 
 
 ## Credits
 Hero image - Photo by energepic.com: https://www.pexels.com/photo/selective-blur-of-2-wine-glass-and-3-drinking-glass-110472/
