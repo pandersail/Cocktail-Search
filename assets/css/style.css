@@ -93,7 +93,8 @@ padding-left: 20px;
 }
 
 .category {
- color: #1bd69e;
+ color: #c0fc51;
+ font-weight: bolder;
  border: 2px solid #8c80e5;
  border-radius: 10px;
  padding: 4px 17px;
@@ -120,7 +121,7 @@ padding-left: 20px;
 }
 
 #number-input {
-    color: #1bd69e;
+ color: #c0fc51;
  border: 2px solid #8c80e5;
  border-radius: 10px;
  padding: 4px 17px;
@@ -133,16 +134,19 @@ padding-left: 20px;
 
 /*placeholder text colour*/
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #1bd69e !important;
+    color: #c0fc51 !important;
     opacity: 1; /* Firefox */
+    font-weight: bolder;
   }
   
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #1bd69e !important;
+    color: #c0fc51 !important;
+    font-weight: bolder;
   }
   
   ::-ms-input-placeholder { /* Microsoft Edge */
-    color: #1bd69e !important;
+    color: #c0fc51 !important;
+    font-weight: bolder;
   }
 
 /* random button */
