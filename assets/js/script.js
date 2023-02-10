@@ -70,11 +70,31 @@ const addRecipeFucn = (newRow, drink) => {
     favBtn.attr('type', 'button');
     favBtn.attr('class', 'favourite-btn'); 
     favBtn.attr('data-id', drink['idDrink']); 
+    favBtn.attr('data-name', drink['strDrink']); 
     favBtn.html('<i class="fa fa-solid fa-heart"></i>Favourite'); 
  
     recipeCol.append(favBtn); 
     recipeCol.append(`<p>${drink['strInstructions']}</p>`); 
     newRow.append(recipeCol); 
+}
+
+// ROW BUILDER FUNCTION 
+let newRowAjax = (drinkID) => {
+    $.ajax({
+        method: 'GET',
+        url: `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkID}`
+    }).then(response => {
+            let drink = response['drinks'][0];
+            console.log(drink);
+            let newRow = $('<div>'); 
+            newRow.attr('class', 'row');
+            
+            addImageFunc(newRow, drink);
+            addIngredientFunc(newRow, drink);
+            addRecipeFucn(newRow, drink); 
+
+            resultsSection.append(newRow);     
+    })
 }
 
 // CLEAR SEARCH FUNCTION
@@ -168,23 +188,9 @@ submitBtn.on('click', async (event) => {
      console.log(IDnums); 
 
     //  Info on page from this call
-     IDnums.forEach(drinkID => {
-        $.ajax({
-            method: 'GET',
-            url: `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkID}`
-        }).then(response => {
-                let drink = response['drinks'][0];
-                console.log(drink);
-                let newRow = $('<div>'); 
-                newRow.attr('class', 'row');
-                
-                addImageFunc(newRow, drink);
-                addIngredientFunc(newRow, drink);
-                addRecipeFucn(newRow, drink); 
-    
-                resultsSection.append(newRow);     
-        })
-     })
+     IDnums.forEach((drinkID) => {
+       newRowAjax(drinkID); 
+     }); 
     }
     clearSearchFunc(); 
 })
@@ -215,4 +221,29 @@ randomBtn.on('click', () => {
 const resetBtn = $('.reset')
 resetBtn.on('click', () => {
     resultsSection.empty(); 
+})
+
+// NEW FAVOURITE CLICK LISTENER
+const favouritesBar = $('#favourites-bar')
+resultsSection.on('click', event => {
+    let clicked = $(event.target); 
+
+    if (clicked.attr('data-id')) {
+        let newBtn = $('<button>');
+        newBtn.attr('class', 'button btn-primary'); 
+        newBtn.attr('data-id', clicked.attr('data-id'))
+        newBtn.text(clicked.attr('data-name')); 
+
+        favouritesBar.append(newBtn); 
+    }
+})
+
+// FAVOURITE BTN CLICK LISTENER
+favouritesBar.on('click', event => {
+    let button = $(event.target);
+
+    if (button.attr('data-id')) {
+        resultsSection.empty();
+        newRowAjax(button.attr('data-id'))
+    }
 })
