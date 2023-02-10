@@ -35,15 +35,21 @@ getURLIngredient = (ingredient) => {
 }
 
 // BOOTSTRAP COLUMN BUILDER FUNCTIONS
+// 1st column - image
 const addImageFunc = (newRow, drink) => {
      let imageCol = $('<div>')
     imageCol.attr('class', 'col col-lg-4')
     imageCol.html(`<img src=${drink['strDrinkThumb']}></img>`)
     newRow.append(imageCol)
 }
+// 2nd column - title, ingredients list
 const addIngredientFunc = (newRow, drink) => {
     let ingredientCol = $('<div>');
     ingredientCol.attr('class', 'col col-md-6 col-lg-4');
+
+    let title = $('<h4>');
+    title.text(drink['strDrink']);
+
     let newList = $('<ul>')
     // there are up to 15 ingredients in the API
     for (let i = 1; i<16; i++) {
@@ -51,21 +57,47 @@ const addIngredientFunc = (newRow, drink) => {
             newList.append(`<li>${drink[`strIngredient${i}`]}</li>`)
         }
     }
+    ingredientCol.append(title); 
     ingredientCol.append(newList);
     newRow.append(ingredientCol);
 }
-
+// 3rd column - fav btn, recipe
 const addRecipeFucn = (newRow, drink) => {
     let recipeCol = $('<div>'); 
     recipeCol.attr('class', 'col col-md-6 col-lg-4');
-    recipeCol.append(`<p>${drink['strInstructions']}</p>`)
-    newRow.append(recipeCol)
+
+    let favBtn = $('<button>');
+    favBtn.attr('type', 'button');
+    favBtn.attr('class', 'favourite-btn'); 
+    favBtn.attr('data-id', drink['idDrink']); 
+    favBtn.attr('data-name', drink['strDrink']); 
+    favBtn.html('<i class="fa fa-solid fa-heart"></i>Favourite'); 
+ 
+    recipeCol.append(favBtn); 
+    recipeCol.append(`<p>${drink['strInstructions']}</p>`); 
+    newRow.append(recipeCol); 
 }
 
-// CLEAR FUNCTIONS
-let clearResultsFunc = () => {
-    resultsSection.empty(); 
+// ROW BUILDER FUNCTION 
+let newRowAjax = (drinkID) => {
+    $.ajax({
+        method: 'GET',
+        url: `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkID}`
+    }).then(response => {
+            let drink = response['drinks'][0];
+            console.log(drink);
+            let newRow = $('<div>'); 
+            newRow.attr('class', 'row');
+            
+            addImageFunc(newRow, drink);
+            addIngredientFunc(newRow, drink);
+            addRecipeFucn(newRow, drink); 
+
+            resultsSection.append(newRow);     
+    })
 }
+
+// CLEAR SEARCH FUNCTION
 let clearSearchFunc = () => {
     ingredientInput.val('');
     nameInput.val('');
@@ -75,7 +107,7 @@ let clearSearchFunc = () => {
 // SUBMIT CLICK LISTENER
 submitBtn.on('click', async (event) => {
     event.preventDefault(); 
-    clearResultsFunc();
+    resultsSection.empty();
     let name = nameInput.val();
     console.log('name: ' + name)
     let ingredient = ingredientInput.val();
@@ -156,23 +188,9 @@ submitBtn.on('click', async (event) => {
      console.log(IDnums); 
 
     //  Info on page from this call
-     IDnums.forEach(drinkID => {
-        $.ajax({
-            method: 'GET',
-            url: `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkID}`
-        }).then(response => {
-                let drink = response['drinks'][0];
-                console.log(drink);
-                let newRow = $('<div>'); 
-                newRow.attr('class', 'row');
-                
-                addImageFunc(newRow, drink);
-                addIngredientFunc(newRow, drink);
-                addRecipeFucn(newRow, drink); 
-    
-                resultsSection.append(newRow);     
-        })
-     })
+     IDnums.forEach((drinkID) => {
+       newRowAjax(drinkID); 
+     }); 
     }
     clearSearchFunc(); 
 })
@@ -180,7 +198,7 @@ submitBtn.on('click', async (event) => {
 // RANDOM CLICK LISTENER
 const randomBtn = $('.random')
 randomBtn.on('click', () => {
-    clearResultsFunc(); 
+    resultsSection.empty();
    $.ajax({
     method: 'GET',
     url: 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
@@ -200,7 +218,32 @@ randomBtn.on('click', () => {
 })
 
 // CLEAR CLICK LISTENER
-const clearBtn = $('.clear')
-clearBtn.on('click', () => {
-    clearResultsFunc(); 
+const resetBtn = $('.reset')
+resetBtn.on('click', () => {
+    resultsSection.empty(); 
+})
+
+// NEW FAVOURITE CLICK LISTENER
+const favouritesBar = $('#favourites-bar')
+resultsSection.on('click', event => {
+    let clicked = $(event.target); 
+
+    if (clicked.attr('data-id')) {
+        let newBtn = $('<button>');
+        newBtn.attr('class', 'button btn-primary'); 
+        newBtn.attr('data-id', clicked.attr('data-id'))
+        newBtn.text(clicked.attr('data-name')); 
+
+        favouritesBar.append(newBtn); 
+    }
+})
+
+// FAVOURITE BTN CLICK LISTENER
+favouritesBar.on('click', event => {
+    let button = $(event.target);
+
+    if (button.attr('data-id')) {
+        resultsSection.empty();
+        newRowAjax(button.attr('data-id'))
+    }
 })
