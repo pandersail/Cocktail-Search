@@ -234,6 +234,7 @@ let renderFavBtn = () => {
         newBtn.attr('data-id', drink['storedID']); 
         newBtn.text(drink['storedName']); 
     
+
         favouritesBar.prepend(newBtn); 
     })
 }
@@ -284,6 +285,7 @@ favouritesBar.on('click', event => {
         newRowAjax(button.attr('data-id'))
     }
 });
+
 
 // CLEAR FAV CLICK LISTENER
 const clearFavBtn = $('.clear-favourites');
