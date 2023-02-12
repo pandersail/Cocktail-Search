@@ -4,6 +4,7 @@ const categoryInput = $('#search-box-category');
 const numberInput = $('#number-input')
 const submitBtn = $('.submit-btn')
 const resultsSection = $('.results')
+const noSearchWarning = $('#no-search-warning')
 
 // URL BUILDER FUNCTIONS
 getURLName = (name) => {
@@ -78,7 +79,6 @@ const addRecipeFucn = (newRow, drink) => {
     recipeCol.append(favBtn); 
     newRow.append(recipeCol); 
 }
-
 // ROW BUILDER FUNCTION 
 let newRowAjax = (drinkID) => {
     $.ajax({
@@ -121,8 +121,11 @@ submitBtn.on('click', async (event) => {
 
     if (!name && !ingredient && !category) {
         console.warn('!name && !ingredient && !category')
-        return 
+        // COULD BE TURNED INTO MODAL, html #no-search-warning remove. 
+        noSearchWarning.removeClass('hide'); 
+        return; 
     } else {
+        noSearchWarning.addClass('hide'); 
     if (name) {
         console.warn('name only'); 
         // get ids for first i results containing search name
@@ -131,7 +134,7 @@ submitBtn.on('click', async (event) => {
          url: getURLName(name)
         })
             for (let i = 0; i < numberOfResponses; i++) {
-                if (response['drinks'][i]) {
+                if (response['drinks']) {
                     IDnums.push(response['drinks'][i]['idDrink'])
                 }
             }
@@ -144,7 +147,9 @@ submitBtn.on('click', async (event) => {
                 url: getURLIngredient(ingredient)
             });
                 for (let i = 0; i < numberOfResponses; i++) {
-                    IDnums.push(response['drinks'][i]['idDrink'])
+                    if (response['drinks']) {
+                        IDnums.push(response['drinks'][i]['idDrink'])
+                    }
                 }
          } else if (category && !ingredient) {
             console.warn('category only')
@@ -154,7 +159,9 @@ submitBtn.on('click', async (event) => {
                 url: `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`
             });
                 for (let i = 0; i < numberOfResponses; i++) {
-                    IDnums.push(response['drinks'][i]['idDrink'])
+                    if (response['drinks']) {
+                        IDnums.push(response['drinks'][i]['idDrink'])
+                    }
                 }
          } else {
             console.warn('category and ingredient')
@@ -166,7 +173,9 @@ submitBtn.on('click', async (event) => {
                 url: getURLIngredient(ingredient)
             });
                 for (let i = 0; i < ingResponse['drinks'].length; i++) {
-                    ingArray.push(ingResponse['drinks'][i]['idDrink']); 
+                    if (ingResponse['drinks']) {
+                        ingArray.push(ingResponse['drinks'][i]['idDrink']); 
+                    }
                 }
             
             let catResponse = await $.ajax({
@@ -174,7 +183,9 @@ submitBtn.on('click', async (event) => {
                 url: `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`
             });
                 for (let i = 0; i < catResponse['drinks'].length; i++) {
-                    catArray.push(catResponse['drinks'][i]['idDrink']); 
+                    if (catResponse['drinks']) {
+                        catArray.push(catResponse['drinks'][i]['idDrink']); 
+                    }
                 }
 
             ingArray.forEach(ingID => {
@@ -188,12 +199,18 @@ submitBtn.on('click', async (event) => {
          } 
      }
  
-     console.log(IDnums); 
+     console.log(IDnums)
+     console.log('IDnums: ' + IDnums); 
 
     //  Info on page from this call
-     IDnums.forEach((drinkID) => {
-       newRowAjax(drinkID); 
-     }); 
+    if (IDnums.length !== 0) {
+        IDnums.forEach((drinkID) => {
+            newRowAjax(drinkID); 
+          });
+    } else {
+        // behaviour for not matching search. Could be changed to modal
+        resultsSection.html('<h2>Sorry, we couldn\'t find anything matching your search</h2>')
+    }
     }
     clearSearchFunc(); 
 })
@@ -300,3 +317,4 @@ clearFavBtn.on('click', () => {
 
 // runs when page loads
 renderFavBtn(); 
+noSearchWarning.addClass('hide'); 
