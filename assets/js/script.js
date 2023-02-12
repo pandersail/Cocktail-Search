@@ -134,7 +134,7 @@ submitBtn.on('click', async (event) => {
          url: getURLName(name)
         })
             for (let i = 0; i < numberOfResponses; i++) {
-                if (response['drinks']) {
+                if (response['drinks'] && response['drinks'][i] && response['drinks'][i]['idDrink']) {
                     IDnums.push(response['drinks'][i]['idDrink'])
                 }
             }
@@ -147,7 +147,7 @@ submitBtn.on('click', async (event) => {
                 url: getURLIngredient(ingredient)
             });
                 for (let i = 0; i < numberOfResponses; i++) {
-                    if (response['drinks']) {
+                    if (response['drinks'] && response['drinks'][i] && response['drinks'][i]['idDrink']) {
                         IDnums.push(response['drinks'][i]['idDrink'])
                     }
                 }
@@ -159,7 +159,7 @@ submitBtn.on('click', async (event) => {
                 url: `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`
             });
                 for (let i = 0; i < numberOfResponses; i++) {
-                    if (response['drinks']) {
+                    if (response['drinks'] && response['drinks'][i] && response['drinks'][i]['idDrink']) {
                         IDnums.push(response['drinks'][i]['idDrink'])
                     }
                 }
@@ -173,7 +173,7 @@ submitBtn.on('click', async (event) => {
                 url: getURLIngredient(ingredient)
             });
                 for (let i = 0; i < ingResponse['drinks'].length; i++) {
-                    if (ingResponse['drinks']) {
+                    if (ingResponse['drinks'] && ingResponse['drinks'][i] && ingResponse['drinks'][i]['idDrink']) {
                         ingArray.push(ingResponse['drinks'][i]['idDrink']); 
                     }
                 }
@@ -183,7 +183,7 @@ submitBtn.on('click', async (event) => {
                 url: `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`
             });
                 for (let i = 0; i < catResponse['drinks'].length; i++) {
-                    if (catResponse['drinks']) {
+                    if (catResponse['drinks'] && catResponse['drinks'][i] && catResponse['drinks'][i]['idDrink']) {
                         catArray.push(catResponse['drinks'][i]['idDrink']); 
                     }
                 }
@@ -198,9 +198,6 @@ submitBtn.on('click', async (event) => {
             }
          } 
      }
- 
-     console.log(IDnums)
-     console.log('IDnums: ' + IDnums); 
 
     //  Info on page from this call
     if (IDnums.length !== 0) {
