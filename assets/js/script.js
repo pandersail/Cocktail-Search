@@ -72,7 +72,7 @@ const addRecipeFucn = (newRow, drink) => {
     favBtn.attr('class', 'favourite-btn'); 
     favBtn.attr('data-id', drink['idDrink']); 
     favBtn.attr('data-name', drink['strDrink']); 
-    favBtn.html('<i class="fa fa-solid fa-heart"></i>Favourite'); 
+    // favBtn.html('<i class="fa fa-solid fa-heart"></i>Favourite'); using icon image instead of text
  
     recipeCol.append(`<p>${drink['strInstructions']}</p>`); 
     recipeCol.append(favBtn); 
@@ -234,7 +234,7 @@ let renderFavBtn = () => {
     if (IDArray) {
         IDArray.forEach(drink => {
             let newBtn = $('<button>');
-            newBtn.attr('class', 'button btn-primary'); 
+            newBtn.attr('class', 'btn-primary'); // changed class to btn-primary instead of button btn-primary
             newBtn.attr('data-id', drink['storedID']); 
             newBtn.text(drink['storedName']); 
         

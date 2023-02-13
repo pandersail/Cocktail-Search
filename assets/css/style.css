@@ -4,7 +4,9 @@ body {
     font-size: 16px;
     font-family: Khula;
     color: #ffffff;
-}
+      }
+      
+
 @font-face {
     font-family: Convergence;
     src: url(../fonts/Convergence/Convergence-Regular.ttf);
@@ -18,6 +20,7 @@ body {
     font-family: Khula;
     src: url(../fonts/Khula/Khula-Regular.ttf);
   }
+
 
 
 
@@ -93,7 +96,8 @@ padding-left: 20px;
 }
 
 .category {
- color: #1bd69e;
+ color: #c0fc51;
+ font-weight: bolder;
  border: 2px solid #8c80e5;
  border-radius: 10px;
  padding: 4px 17px;
@@ -119,13 +123,40 @@ padding-left: 20px;
     padding-left: 20px;
 }
 
+#number-input {
+ color: #c0fc51;
+ border: 2px solid #8c80e5;
+ border-radius: 10px;
+ padding: 4px 17px;
+ margin-left: 20px;
+ margin-bottom: 20px;
+ background: transparent;
+ max-width: 90px;
+
+}
+
+/*placeholder text colour*/
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #c0fc51 !important;
+    opacity: 1; /* Firefox */
+    font-weight: bolder;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #c0fc51 !important;
+    font-weight: bolder;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #c0fc51 !important;
+    font-weight: bolder;
+  }
+
+/* random button */
 #buttons {
     display: flex;
     padding: 10px 10px 10px 20px;
 }
-
-/* random button */
-
 
 .submit-btn {
     margin-right: 15px;
@@ -147,6 +178,8 @@ padding-left: 20px;
    .submit-btn:hover {
     animation: shake3856 0.3s linear infinite both;
     color: #c0fc51;
+    cursor: url(../images/cursor.png), auto;
+    cursor: url(../images/cursor.png) 15 15, move;
    }
    
    @keyframes shake3856 {
@@ -216,6 +249,8 @@ padding-left: 20px;
     background-color: #4cc9f0;
     color: #c0fc51;
     box-shadow: 0 2px 0 2px #0d3b66;
+    cursor: url(../images/cursor.png), auto;
+    cursor: url(../images/cursor.png) 15 15, move;
    }
    
    .random:hover::before {
@@ -351,6 +386,43 @@ display: block;
   margin-bottom: 20px;
 
 }
+
+.favourite-btn {
+    background-image:url(../images/favourite.png);
+    width: 2em;
+    height: 2em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 0;
+    border-radius: 50%;
+}
+
+.btn-primary {
+        padding: 8px 20px;
+        border-radius: 10px;
+        margin: 30px 5px 15px 20px;
+        border: 0;
+        background-color: #4cc9f0;
+        letter-spacing: 1.5px;
+        font-size: 15px;
+        transition: all .3s ease;
+        box-shadow: #257189 0px 10px 0px 0px;
+        color: hsl(0, 0%, 100%);
+        font-weight: bolder;
+       }
+       
+       .btn-primary:hover {
+        box-shadow: #257189 0px 7px 0px 0px;
+       }
+       
+       .btn-primary:active {
+        background-color: #4cc9f0;
+        /*50, 168, 80*/
+        box-shadow: #257189 0px 0px 0px 0px;
+        transform: translateY(5px);
+        transition: 200ms;
+       }
+
 
 /* footer */
 #github {
