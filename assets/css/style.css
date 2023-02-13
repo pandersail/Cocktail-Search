@@ -285,6 +285,27 @@ padding-left: 20px;
  }
 }
 
+  /* clear favourites button */
+  .clear-favourites {
+    height: 3em;
+    width: 7em;
+ margin-left: 15px;
+ border-radius: 12px;
+ background: transparent;
+ -webkit-animation: jello-horizontal 0.9s both;
+ animation: jello-horizontal 0.9s both;
+ border: 2px solid #fc51dd;
+ outline: none;
+ color: #ffffff;
+ font-size: 17px;
+  }
+
+  .clear-favourites:hover {
+    background: #fc51dd;
+    color: #ffffff;
+    animation: squeeze3124 0.9s both;
+   }
+
    
 /* font */
 .navbar-brand,
