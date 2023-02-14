@@ -1,10 +1,19 @@
+// AGE CONFIRM POPUP (MODAL)
+let agePopup = $('#agepopup'); 
+let ageConfirmBtn = $('#confirm-age'); 
+
+ageConfirmBtn.on('click', () => {
+    agePopup.addClass('hide'); 
+}); 
+
+// MISC ELEMENTS ON PAGE
 const nameInput = $('#search-box-name'); 
 const ingredientInput = $('#search-box-ingredient'); 
 const categoryInput = $('#search-box-category');
-const numberInput = $('#number-input')
-const submitBtn = $('.submit-btn')
-const resultsSection = $('.results')
-const noSearchWarning = $('#no-search-warning')
+const numberInput = $('#number-input');
+const submitBtn = $('.submit-btn');
+const resultsSection = $('.results'); 
+const noSearchWarning = $('#no-search-warning'); 
 
 // URL BUILDER FUNCTIONS
 getURLName = (name) => {
