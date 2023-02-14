@@ -68,7 +68,7 @@ const addImageFunc = (newRow, drink) => {
 // 2nd column - title, ingredients list
 const addIngredientFunc = (newRow, drink) => {
     let ingredientCol = $('<div>');
-    ingredientCol.attr('class', 'col col-md-6 col-lg-4');
+    ingredientCol.attr('class', 'col col-md-6 col-lg-4 result-text');
 
     let title = $('<h4>');
     title.text(drink['strDrink']);
@@ -87,7 +87,7 @@ const addIngredientFunc = (newRow, drink) => {
 // 3rd column - fav btn, recipe
 const addRecipeFucn = (newRow, drink) => {
     let recipeCol = $('<div>'); 
-    recipeCol.attr('class', 'col col-md-6 col-lg-4');
+    recipeCol.attr('class', 'col col-md-6 col-lg-4 result-text');
 
     let favBtn = $('<button>');
     favBtn.attr('type', 'button');
