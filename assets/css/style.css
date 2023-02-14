@@ -27,8 +27,41 @@ i {
   }
 
 
+.search .container-fluid {
+  display: flex;
+  justify-content: flex-start;
+}
+.instructions-open {
+  /* These styles aren't working */
+  border: 3px solid white; 
+  height: 30px;
+  width: 30px; 
+  border-radius: 50% !important;
+  background-color: transparent !important;
+  color: white !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.instructions-close {
+  background-color: #f58cff;
+  color: black; 
+  border-color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+#how-it-works {
+  background: linear-gradient(10deg, rgb(53, 0, 83), rgb(101, 0, 114), rgb(143, 0, 179));
+  width: 90%;
+  border-radius: 10px;
+  margin: 0 auto; 
+  padding: 20px; 
+  z-index: 1;
+  position: fixed;
+  left: 5%;
+  top:  20px; 
 
-
+}; 
 
 /* header  */
 h1 {

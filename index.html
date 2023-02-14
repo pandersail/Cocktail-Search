@@ -51,46 +51,15 @@ I am 18 or above!
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
           <h3 class="navbar-brand mb-0 h1">Cocktail Search</h3>
+          <!-- instructions modal trigger button -->
+          <button type="button" class="instructions-open">
+            <i class="fa fa-solid fa-question"></i></button>
         </div>
       </nav>
 
-    <div class="search-area">
-      <div class="name-search-set">
-        <span><strong>Name</span></strong>
-        <br><input type="text" class="form-control" id="search-box-name" placeholder="Name of the cocktail" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
-      <div class="ingredient-search-set"></div>
-        <span><strong>Ingredient</span></strong>
-        <br><input type="text" class="form-control" id="search-box-ingredient" placeholder="Name one ingredient" aria-label="Username" aria-describedby="basic-addon1">
-      </div>
-    </div>
-
-
-    <label for="search-box-category"><strong>By category</strong></label>
-        <br><select id="search-box-category" name="name of drink" class="category">
-          <option value="">Select Option</option>
-
-          <option value="Cocktail">Cocktail</option>
-          <option value="Shot">Shot</option>
-          <option value="Punch / Party Drink">Punch / Party Drink</option>
-          <option value="Ordinary_Drink">Ordinary Drink</option>
-          <option value="Beer">Beers</option>
-          <option value="Soft_Drink">Soft Drink</option>
-          <option value="Other / Unknown">Other / Unknown</option>
-        </select>
-
-    <br><label for="number-input"><strong>Number of Results</strong></label>
-    <br><input type="number" id="number-input" name="number-input" placeholder="3"
-     value="3" id=”” min="1" max="5" step="1" class="form-control" 
-     aria-label="Username" aria-describedby="basic-addon1" required/> 
-
-     <!-- how it works button and modal -->
-     <button type="button" class="instructions-open">
-      <i class="fa fa-solid fa-question"></i>
-      How It Works </button>
-
+      <!-- how it works modal -->
      <div id="how-it-works" class="hide">
-      <h4>How our Search Works</h4>
+      <h4>How our Search Works: </h4>
       <p>Welcome to Cocktail Mix, here you can find a whole world of 
       cocktail recipes. There are three ways to search:
       </p>
@@ -110,6 +79,36 @@ I am 18 or above!
       </p>
      <button class="instructions-close">Got It</button>
      </div>
+
+      <div class="search-area">
+        <div class="name-search-set">
+          <span><strong>Name</span></strong>
+          <br><input type="text" class="form-control" id="search-box-name" placeholder="Name of the cocktail" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="ingredient-search-set"></div>
+          <span><strong>Ingredient</span></strong>
+          <br><input type="text" class="form-control" id="search-box-ingredient" placeholder="Name one ingredient" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+      </div>
+
+
+      <label for="search-box-category"><strong>By category</strong></label>
+      <br><select id="search-box-category" name="name of drink" class="category">
+        <option value="">Select Option</option>
+
+        <option value="Cocktail">Cocktail</option>
+        <option value="Shot">Shot</option>
+        <option value="Punch / Party Drink">Punch / Party Drink</option>
+        <option value="Ordinary_Drink">Ordinary Drink</option>
+        <option value="Beer">Beers</option>
+        <option value="Soft_Drink">Soft Drink</option>
+        <option value="Other / Unknown">Other / Unknown</option>
+      </select>
+
+      <br><label for="number-input"><strong>Number of Results</strong></label>
+      <br><input type="number" id="number-input" name="number-input" placeholder="3"
+       value="3" id=”” min="1" max="5" step="1" class="form-control" 
+       aria-label="Username" aria-describedby="basic-addon1" required/> 
 
      <!-- buttons bar -->
     <div id="buttons">    

@@ -61,7 +61,7 @@ getURLIngredient = (ingredient) => {
 // 1st column - image
 const addImageFunc = (newRow, drink) => {
      let imageCol = $('<div>')
-    imageCol.attr('class', 'col col-lg-4')
+    imageCol.attr('class', 'col col-lg-4 ')
     imageCol.html(`<img src=${drink['strDrinkThumb']}></img>`)
     newRow.append(imageCol)
 }
