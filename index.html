@@ -16,7 +16,8 @@
 </head>
 
 <body>
-<!-- MODAL  -->
+
+<!-- age confirm modal  -->
 <div id="agepopup"> 
   <h1>
     ONLY ENTER IF YOU ARE 18 AND ABOVE!!!!!!!
@@ -25,6 +26,7 @@
 I am 18 or above!
 </button>
 </div>
+
   <!-- nav bar with icon-->
   <nav class="navbar bg-body-tertiary" class="jumbotron"> 
     <div class="container-fluid">
@@ -82,6 +84,34 @@ I am 18 or above!
      value="3" id=”” min="1" max="5" step="1" class="form-control" 
      aria-label="Username" aria-describedby="basic-addon1" required/> 
 
+     <!-- how it works button and modal -->
+     <button type="button" class="instructions-open">
+      <i class="fa fa-solid fa-question"></i>
+      How It Works </button>
+
+     <div id="how-it-works" class="hide">
+      <h4>How our Search Works</h4>
+      <p>Welcome to Cocktail Mix, here you can find a whole world of 
+      cocktail recipes. There are three ways to search:
+      </p>
+      <ol>
+        <li><span class="font-weight-bold">By Name:</span> 
+          Know exactly what you're looking for? Great! 
+          Put in the name and we'll shake up a recipe for you!</li>
+        <li><span class="font-weight-bold">By Ingredient and Category:</span>
+           You can find any cocktail that is a particular type of drink 
+          <em>and</em> has your favourite ingredient!</li>
+        <li><span class="font-weight-bold">Random:</span>
+           Feeling a bit overwhelmed by the possibilities? Hit the random button!</li>
+      </ol>
+      <p class="font-weight-bold">Can I save a recipe for later?</p>
+      <p>Yes! press the little heart next to a cocktail to add it to 
+        your favourites bar. You can store up to 5 cocktails.
+      </p>
+     <button class="instructions-close">Got It</button>
+     </div>
+
+     <!-- buttons bar -->
     <div id="buttons">    
       <br><button type="button" class="submit-btn">Shake
        <!-- <img src="./assets/images/shaker.gif" class="btn btn-outline-primary"> -->
