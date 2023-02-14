@@ -332,14 +332,14 @@ padding-left: 20px;
  background: transparent;
  -webkit-animation: jello-horizontal 0.9s both;
  animation: jello-horizontal 0.9s both;
- border: 2px solid #fc51dd;
+ border: 2px solid #8c80e5;
  outline: none;
  color: #ffffff;
  font-size: 17px;
   }
 
   .clear-favourites:hover {
-    background: #fc51dd;
+    background: #8c80e5;
     color: #ffffff;
     animation: squeeze3124 0.9s both;
    }
@@ -390,6 +390,7 @@ display: block;
 
 }
 
+/* favourite icon */
 .favourite-btn {
     background-image:url(../images/favourite.png);
     width: 2em;
@@ -400,28 +401,29 @@ display: block;
     border-radius: 50%;
 }
 
+/* favourite drinks */
 .btn-primary {
         padding: 8px 20px;
         border-radius: 10px;
         margin: 30px 5px 15px 20px;
         border: 0;
-        background-color: #4cc9f0;
+        background-color: #4ccaf098;
         letter-spacing: 1.5px;
         font-size: 15px;
         transition: all .3s ease;
-        box-shadow: #257189 0px 10px 0px 0px;
+        box-shadow: #257289a1 0px 10px 0px 0px;
         color: hsl(0, 0%, 100%);
         font-weight: bolder;
        }
        
        .btn-primary:hover {
-        box-shadow: #257189 0px 7px 0px 0px;
+        box-shadow: #257289a1 0px 7px 0px 0px;
        }
        
        .btn-primary:active {
-        background-color: #4cc9f0;
+        background-color: #4ccaf098;
         /*50, 168, 80*/
-        box-shadow: #257189 0px 0px 0px 0px;
+        box-shadow: #257289a1 0px 0px 0px 0px;
         transform: translateY(5px);
         transition: 200ms;
        }
