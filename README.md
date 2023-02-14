@@ -9,7 +9,15 @@ https://daisyeverard.github.io/Cocktail-Search/
 
 ## Description
 
-## Issues and Solutions
+## List of Technologies Used
+
+- HTML
+- Bootstrap
+- CSS
+- FontAwesome
+- JavaScript
+- jQuery
+- Git and Github
 
 ## About our Team
 
