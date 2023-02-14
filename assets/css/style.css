@@ -436,6 +436,7 @@ input::before {
  .results {
     margin-top: 30px;
     padding-right: 40px;
+    display: flex;
 } 
 
 .results img /* image output settings */ {
@@ -449,6 +450,10 @@ display: block;
   width: 80%;
   margin-bottom: 20px;
 
+}
+
+.result-text {
+    background-color: #0d3b66;
 }
 
 /* favourite icon */
