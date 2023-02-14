@@ -6,6 +6,18 @@ ageConfirmBtn.on('click', () => {
     agePopup.addClass('hide'); 
 }); 
 
+// HOW IT WORKS? MODAL
+let howItWorks = $('#how-it-works'); 
+let howItWorksOpen = $('.instructions-open');
+let howItWorksClose =$('.instructions-close'); 
+
+howItWorksOpen.on('click', () => {
+    howItWorks.removeClass('hide'); 
+}); 
+howItWorksClose.on('click', () => {
+    howItWorks.addClass('hide'); 
+}); 
+
 // MISC ELEMENTS ON PAGE
 const nameInput = $('#search-box-name'); 
 const ingredientInput = $('#search-box-ingredient'); 
