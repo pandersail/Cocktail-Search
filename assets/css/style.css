@@ -489,3 +489,35 @@ display: block;
   width: 60%;
     }
     }
+
+    /* MODAL */
+    #agepopup{
+
+
+background-color: rgb(187, 93, 201); 
+position:fixed;
+border: 1px solid #888;
+cursor: pointer;
+border: 5px solid rgb(179, 23, 23);
+z-index: 100;
+
+
+
+    }
+
+    #confirm-age
+    {
+margin: 290px;
+height: 208px;
+width: 356px;
+
+    }
+h4 {
+
+ 
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #d91515;
+  font-weight:bolder;
+  font-size: larger;
+
+}
