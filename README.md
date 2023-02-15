@@ -13,6 +13,9 @@ Cocktail-Mix is a site for a bar of the same name which is used to search for co
 
 Features include:
 
+- Age confirm popup on load with Date of Birth input
+- If age is under 18, redirects to soft drinks webpage
+
 - Search for a cocktail by name, or a work included in the name
 - Search by an ingredient name, a category of drink, or a combined search of these two parameters
 - Choose how many results (max) to return
