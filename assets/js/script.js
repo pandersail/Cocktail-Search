@@ -1,102 +1,20 @@
 // AGE CONFIRM POPUP (MODAL)
 let agePopup = $('#agepopup'); 
 let ageConfirmBtn = $('#confirm-age'); 
-// function getAge(dateString){
-//     var today = new Date();
-//     var birthDate = new Date(dateString);
-//     var age = today.getFullYear() - birthDate.getFullYear();
-//     var m = today.getMonth() - birthDate.getMonth();
-//     if ( m < 0 || (m === 0 && today.getDate() < birthDate.getDate() )){
-//         age--;
-//     } return age
-// } console.log('age:'+ getAge ("1990/10/10"))
-
-$('#go').click(function() {
-    var test1 = $('#test').val();
-  
-    if (test1 === "") {
-      $('#agepopup').modal('show');
-    }
-  })
+let dobInput = $('#date-input');
 
 ageConfirmBtn.on('click', () => {
-    agePopup.addClass('hide'); 
+    let dob =  moment(dobInput.val(), 'YYYY-MM-DD');
+    let today = moment();
+    let difference = moment.duration(today.diff(dob)); 
+    let age = difference['_data']['years']
+
+    if (age >= 18)  {
+        agePopup.addClass('hide'); 
+    } else {
+        window.location.href = 'https://www.thespruceeats.com/summer-drinks-for-kids-4165867'
+    }
 }); 
-
-// Hani's modal
-    // starts the age verification process
-    function initAge() {
-        var month = 0;
-        var day = 0;
-        var year = 0;
-  
-        $("#age-submit").on("click", function () {
-          age['month'] = $("#verify-month").val();
-          age['day'] = $("#verify-day").val();
-          age['year'] = $("#verify-year").val();
-          checkDate();
-        });
-      }
-  
-      // Check to see if user entered a valid date...
-      function checkDate() {
-        if (age.month == 'none' || age.day == 'none' || age.year == 'none') {
-          // Fade in the error...
-          $('#modal-error').css('visibility', 'visible').hide().fadeIn('slow');
-  
-          // changes the background color of the select if invalid
-          if (age.month == 'none') {
-            $("#verify-month").css('background', 'rgba(223,32,44,0.5)');
-            // Look for change of value and change background color when valid
-            $("#verify-month").on('change', function () {
-              if ($("#verify-month").val() == 'none') {
-                $("#verify-month").css('background', 'rgba(223,32,44,0.5)');
-              } else {
-                $("#verify-month").css('background', 'white');
-              }
-            });
-          }
-  
-          // changes the background color of the select if invalid
-          if (age.day == 'none') {
-            $("#verify-day").css('background', 'rgba(223,32,44,0.5)');
-            // Look for change of value and change background color when valid
-            $("#verify-day").on('change', function () {
-              if ($("#verify-day").val() == 'none') {
-                $("#verify-day").css('background', 'rgba(223,32,44,0.5)');
-              } else {
-                $("#verify-day").css('background', 'white');
-              }
-            });
-          }
-  
-          // changes the background color of the select if invalid
-          if (age.year == 'none') {
-            $("#verify-year").css('background', 'rgba(223,32,44,0.5)');
-            // Look for change of value and change background color when valid
-            $("#verify-year").on('change', function () {
-              if ($("#verify-year").val() == 'none') {
-                $("#verify-year").css('background', 'rgba(223,32,44,0.5)');
-              } else {
-                $("#verify-year").css('background', 'white');
-              }
-            });
-          }
-        } else {
-          oldEnough();
-        }
-      }
-     // Compares age entered with todays date 21 years ago...
-      function oldEnough() {
-        
-
-          var ageLimit = dayjs().subtract(18, 'year');
-          var birthDate = dayjs(new Date(age.year, age.month - 1, age.day))
-
-
-         var oldEnough = birthDate.isBefore(ageLimit);
-
-     }
 
 // HOW IT WORKS? MODAL
 let howItWorks = $('#how-it-works'); 
