@@ -60,9 +60,11 @@ i {
   position: fixed;
   left: 5%;
   top:  20px; 
-
-}; 
-
+}
+#how-it-works h4 {
+  color: white; 
+  font-family: 'Convergence';
+}
 /* header  */
 h1 {
     display: flex;
