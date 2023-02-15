@@ -16,6 +16,17 @@
 </head>
 
 <body>
+
+<!-- age confirm modal  -->
+<div id="agepopup"> 
+  <h4>
+    ONLY ENTER IF YOU ARE 18 AND ABOVE !!!!!!!
+      </h4>
+<button id="confirm-age"> 
+I am 18 or above!
+</button>
+</div>
+
   <!-- nav bar with icon-->
   <nav class="navbar bg-body-tertiary" class="jumbotron">
     <div class="container-fluid">
@@ -41,41 +52,67 @@
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
           <h3 class="navbar-brand mb-0 h1">Cocktail Search</h3>
+          <!-- instructions modal trigger button -->
+          <button type="button" class="instructions-open">
+            <i class="fa fa-solid fa-question"></i></button>
         </div>
       </nav>
+
+      <!-- how it works modal -->
+     <div id="how-it-works" class="hide">
+      <h4>How our Search Works: </h4>
+      <p>Welcome to Cocktail Mix, here you can find a whole world of 
+      cocktail recipes. There are three ways to search:
+      </p>
+      <ol>
+        <li><span class="font-weight-bold">By Name:</span> 
+          Know exactly what you're looking for? Great! 
+          Put in the name and we'll shake up a recipe for you!</li>
+        <li><span class="font-weight-bold">By Ingredient and Category:</span>
+           You can find any cocktail that is a particular type of drink 
+          <em>and</em> has your favourite ingredient!</li>
+        <li><span class="font-weight-bold">Random:</span>
+           Feeling a bit overwhelmed by the possibilities? Hit the random button!</li>
+      </ol>
+      <p class="font-weight-bold">Can I save a recipe for later?</p>
+      <p>Yes! press the little heart next to a cocktail to add it to 
+        your favourites bar. You can store up to 5 cocktails.
+      </p>
+     <button class="instructions-close">Got It</button>
+     </div>
 
       <div class="search-area">
         <div class="name-search-set">
           <span><strong>Name</span></strong>
-          <br><input type="text" class="form-control" id="search-box-name" placeholder="Name of the cocktail"
-            aria-label="Username" aria-describedby="basic-addon1">
+          <br><input type="text" class="form-control" id="search-box-name" placeholder="Name of the cocktail" aria-label="Username" aria-describedby="basic-addon1">
         </div>
         <div class="ingredient-search-set"></div>
-        <span><strong>Ingredient</span></strong>
-        <br><input type="text" class="form-control" id="search-box-ingredient" placeholder="Name one ingredient"
-          aria-label="Username" aria-describedby="basic-addon1">
+          <span><strong>Ingredient</span></strong>
+          <br><input type="text" class="form-control" id="search-box-ingredient" placeholder="Name one ingredient" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
       </div>
-      </div>
+    </div>
 
 
-    <label for="search-box-category"><strong>By category</strong></label>
-        <br><select id="search-box-category" name="name of drink" class="category">
-          <option value="">Select Option</option>
+      <label for="search-box-category"><strong>By category</strong></label>
+      <br><select id="search-box-category" name="name of drink" class="category">
+        <option value="">Select Option</option>
 
-          <option value="Cocktail">Cocktail</option>
-          <option value="Shot">Shot</option>
-          <option value="Punch / Party Drink">Punch / Party Drink</option>
-          <option value="Ordinary_Drink">Ordinary Drink</option>
-          <option value="Beer">Beers</option>
-          <option value="Soft_Drink">Soft Drink</option>
-          <option value="Other / Unknown">Other / Unknown</option>
-        </select>
+        <option value="Cocktail">Cocktail</option>
+        <option value="Shot">Shot</option>
+        <option value="Punch / Party Drink">Punch / Party Drink</option>
+        <option value="Ordinary_Drink">Ordinary Drink</option>
+        <option value="Beer">Beers</option>
+        <option value="Soft_Drink">Soft Drink</option>
+        <option value="Other / Unknown">Other / Unknown</option>
+      </select>
 
-    <br><label for="number-input"><strong>Number of Results</strong></label>
-    <br><input type="number" id="number-input" name="number-input" placeholder="3"
-     value="3" id=”” min="1" max="5" step="1" class="form-control" 
-     aria-label="Username" aria-describedby="basic-addon1" required/> 
+      <br><label for="number-input"><strong>Number of Results</strong></label>
+      <br><input type="number" id="number-input" name="number-input" placeholder="3"
+       value="3" id=”” min="1" max="5" step="1" class="form-control" 
+       aria-label="Username" aria-describedby="basic-addon1" required/> 
 
+     <!-- buttons bar -->
     <div id="buttons">    
       <br><button type="button" class="submit-btn">Shake
        <!-- <img src="./assets/images/shaker.gif" class="btn btn-outline-primary"> -->
@@ -88,6 +125,7 @@
       <button type="button" class="clear-favourites">Clear Favourites
       </button>
   </div>
+  <p class="hide text-white" id="no-search-warning">Please enter at least one search parameter</p>
     </section>
 
     <!-- added favourites bar here, can be moved where wanted. 
