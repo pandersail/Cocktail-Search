@@ -198,6 +198,7 @@ submitBtn.on('click', async (event) => {
                         ingArray.push(ingResponse['drinks'][i]['idDrink']); 
                     }
                 }
+                console.log(ingArray)
             
             let catResponse = await $.ajax({
                 method: 'GET',
@@ -208,10 +209,11 @@ submitBtn.on('click', async (event) => {
                         catArray.push(catResponse['drinks'][i]['idDrink']); 
                     }
                 }
+                console.log(catArray)
 
             ingArray.forEach(ingID => {
                 if (catArray.find(catID => catID === ingID)) {
-                    IDnums.push(item);
+                    IDnums.push(ingID);
                 }
             }) 
             if (IDnums.length > numberOfResponses) {
