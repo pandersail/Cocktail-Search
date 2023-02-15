@@ -566,19 +566,30 @@ display: block;
 /* AGE CONFIRM MODAL */
 
 #agepopup {
-  background-color: rgb(187, 93, 201);
-  position: absolute;
-  top: 150px;
-  left: 560px;
-  padding: 0px;
-  margin: 0px;
-  border: 1px solid #888;
+  background-color: #d91515;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: calc(100vw - 40px);
+  height: calc(100vh - 40px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   border: 5px solid rgb(179, 23, 23);
   z-index: 100;
-
 }
-
+#agepopup h4 {
+  color: black;
+  font-size: 2em;
+  letter-spacing: 0.1rem;
+  font-weight: normal;
+}
+#agepopup p {
+  font-weight: bold;
+}
 /* #verify-month {
   position:absolute;
   padding: 10px;
@@ -600,12 +611,15 @@ display: flex;
   justify-content: center;
   align-items: center;
 }
+#agepopup button {
+   background-color: black;
+   border-radius: 5px;
+   color: white;
+   font-weight: bold;
+}
 
 h4 {
-
-
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: #d91515;
   font-weight: bolder;
   font-size: larger;
 }
