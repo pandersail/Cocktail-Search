@@ -11,10 +11,17 @@ ageConfirmBtn.on('click', () => {
 
     if (age >= 18)  {
         agePopup.addClass('hide'); 
+        localStorage.setItem('userDOB', JSON.stringify(age))
     } else {
         window.location.href = 'https://www.thespruceeats.com/summer-drinks-for-kids-4165867'
     }
 }); 
+
+// don't show popup if already entered once
+let storedAge = JSON.parse(localStorage.getItem('userDOB'));
+    if (storedAge && storedAge >= 18) {
+        agePopup.addClass('hide');
+    }; 
 
 // HOW IT WORKS? MODAL
 let howItWorks = $('#how-it-works'); 
