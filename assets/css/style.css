@@ -36,7 +36,6 @@ i {
 }
 
 .instructions-open {
-  /* These styles aren't working */
   border: 3px solid white;
   height: 30px;
   width: 30px;
@@ -59,6 +58,8 @@ i {
 #how-it-works {
   background: linear-gradient(10deg, rgb(53, 0, 83), rgb(101, 0, 114), rgb(143, 0, 179));
   width: 90%;
+  max-height: 90vh;
+  overflow: scroll;
   border-radius: 10px;
   margin: 0 auto;
   padding: 20px;
@@ -66,8 +67,11 @@ i {
   position: fixed;
   left: 5%;
   top:  20px; 
-
-}; 
+}
+#how-it-works h4 {
+  color: white;
+  font-family: 'Convergence';
+}
 
 /* header  */
 h1 {
@@ -432,6 +436,9 @@ h3 {
   background: transparent;
   max-width: 250px;
 }
+#number-input{
+   padding: 0;
+}
 
 .form-control:active {
   box-shadow: 2px 2px 15px #8707ff inset;
@@ -556,7 +563,7 @@ display: block;
   }
 }
 
-/* MODAL */
+/* AGE CONFIRM MODAL */
 
 #agepopup {
   background-color: rgb(187, 93, 201);
@@ -601,5 +608,4 @@ h4 {
   color: #d91515;
   font-weight: bolder;
   font-size: larger;
-
 }
