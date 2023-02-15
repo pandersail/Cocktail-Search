@@ -47,16 +47,33 @@ i {
   align-items: center;
 }
 
+
 .instructions-close {
-  background-color: #f58cff;
-  color: black;
-  border-color: white;
-  font-weight: bold;
-  border-radius: 5px;
-}
+    --bg: #000;
+    --hover-bg: #ff90e8;
+    --hover-text: #000;
+    color: #fff;
+    border: 1px solid var(--bg);
+    border-radius: 4px;
+    padding: 0.8em 2em;
+    background: var(--bg);
+    transition: 0.2s;
+  }
+  
+  .instructions-close:hover {
+    color: var(--hover-text);
+    transform: translate(-0.25rem,-0.25rem);
+    background: var(--hover-bg);
+    box-shadow: 0.25rem 0.25rem var(--bg);
+  }
+  
+  .instructions-close:active {
+    transform: translate(0);
+    box-shadow: none;
+  }
 
 #how-it-works {
-  background: linear-gradient(10deg, rgb(53, 0, 83), rgb(101, 0, 114), rgb(143, 0, 179));
+  background: #4ccaf0;
   width: 90%;
   max-height: 90vh;
   overflow: scroll;
@@ -69,7 +86,7 @@ i {
   top:  20px; 
 }
 #how-it-works h4 {
-  color: white;
+  color: #f4e923;
   font-family: 'Convergence';
 }
 
@@ -618,7 +635,6 @@ display: block;
         } 
 }
         
-
 /* footer */
 #github {
   width: 2em;
