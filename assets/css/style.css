@@ -223,7 +223,7 @@ label {
   font-weight: 900;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .submit-btn:hover {
@@ -456,7 +456,7 @@ input::before {
     padding-right: 25px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 } 
 
 .results img /* image output settings */ {
@@ -467,7 +467,7 @@ box-shadow:  8px 13px 22px #7e4a81,
 display: block;
 
   margin-left: 20px;
-  margin-right: auto;
+  margin-right: 20px;
   width: 80%;
   margin-bottom: 20px;
 
@@ -513,27 +513,77 @@ display: block;
 }
 
 .row {
-    background-color: #4ccaf055;
+    background-color: #4ccaf030;
     padding: 30px 15px 10px 15px;
     margin-left: 10px;
     margin-bottom: 15px;
     border-radius: 5%;
 
 }
-@media (max-width: 768px) {
-        .col img  {
-            width: 300px;
+
+@media (max-width: 991px) {
+    /* .row {
+        flex-grow: 1;
+    } */
+    .col-md-6 {
+        flex: 0 0 30%;
+    }
+
+    .col{
+
+        flex-grow: 0;
+    }
+    .col img  {
+            width: 20vw;
             height: auto;
-            
      }
-        .col h4 {
+    .col h4 {
             font-family: Sansita;
             color: #f4e923;
         }
         .col ul,
         .col p {
-           
+            /* nothing so far */
+        }
+}
 
+@media (max-width: 768px) {
+    .results {
+        margin-top: 30px;
+        padding-right: 25px;
+        display: flex;
+        /* flex-direction: column; */
+        align-items: center;
+    } 
+    .col img  {
+            width: 300px;
+            height: auto;
+     }
+    .col h4 {
+            font-family: Sansita;
+            color: #f4e923;
+        }
+        .col ul,
+        .col p {
+            /* nothing so far */
+        }
+}
+
+@media (max-width: 600px) {
+    .results img {
+        /* empty */
+    }
+    .col img  {
+            width: 80vw;
+            height: auto;
+     }
+    .col h4 {
+            font-family: Sansita;
+            color: #f4e923;
+        }
+        .col ul,
+        .col p {
+            /* nothing so far */
         }
 }
         
