@@ -65,11 +65,9 @@ i {
   z-index: 1;
   position: fixed;
   left: 5%;
-  top: 20px;
+  top:  20px; 
 
-}
-
-;
+}; 
 
 /* header  */
 h1 {
