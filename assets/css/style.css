@@ -439,6 +439,8 @@ input::before {
     margin-top: 30px;
     padding-right: 40px;
     display: flex;
+    flex-direction: column;
+    align-content: center;
 } 
 
 .results img /* image output settings */ {
@@ -496,6 +498,25 @@ display: block;
         transition: 200ms;
        }
 
+
+@media (max-width: 768px) {
+        .col img  {
+            width: 90%;
+            height: auto;
+            
+     }
+        .col h4 {
+            font-family: Sansita;
+            color: #f4e923;;
+            background-color: #4ccaf078;
+        }
+        .col ul,
+        .col p {
+            background-color: #4ccaf078;
+
+        }
+}
+        
 
 /* footer */
 #github {
