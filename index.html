@@ -20,10 +20,11 @@
 <!-- age confirm modal  -->
 <!-- <div id="agepopup"> 
   <h4>
-    ONLY ENTER IF YOU ARE 18 AND ABOVE !!!!!!!
+    This site's contents relate to the preperation of alcoholic
+    beverages. Please ONLY ENTER IF YOU ARE 18 AND ABOVE !!!!!!!
       </h4>
 <button id="confirm-age"> 
-I am 18 or above!
+I am 18 or above
 </button>
 </div> -->
 
@@ -32,8 +33,10 @@ I am 18 or above!
 <!-- age confirm modal  -->
 <div class="modalAge" id="agepopup">
   <h4>
+    The contents of this site pertain to the preperation of alcoholic beverages. 
     ONLY ENTER IF YOU ARE 18 AND ABOVE !!!!!!!
   </h4>
+  <p>Please enter your date of birth:</p>
   <div id="verify-box">
     <select name="month" id="verify-month">
       <option value="none">Month</option>
@@ -218,8 +221,8 @@ I am 18 or above!
       </p>
       <ol>
         <li><span class="font-weight-bold">By Name:</span> 
-          Know exactly what you're looking for? Great! 
-          Put in the name and we'll shake up a recipe for you!</li>
+          Know exactly what you're looking for, or only remember on word from the name? Great! 
+          Put in the name or word, and we'll shake up a recipe for you!</li>
         <li><span class="font-weight-bold">By Ingredient and Category:</span>
            You can find any cocktail that is a particular type of drink 
           <em>and</em> has your favourite ingredient!</li>
@@ -261,11 +264,13 @@ I am 18 or above!
 
       <br><label for="number-input"><strong>Number of Results</strong></label>
       <br><input type="number" id="number-input" name="number-input" placeholder="3"
-       value="3" id=”” min="1" max="5" step="1" class="form-control" 
+       value="3" min="1" max="5" step="1" class="form-control" 
        aria-label="Username" aria-describedby="basic-addon1" required/> 
 
+       <!-- warning message -->
+       <p class="hide text-white" id="no-search-warning">Please enter at least one search parameter</p> 
      <!-- buttons bar -->
-    <div id="buttons">    
+    <div id="buttons">   
       <br><button type="button" class="submit-btn">Shake
        <!-- <img src="./assets/images/shaker.gif" class="btn btn-outline-primary"> -->
       </button>
@@ -277,7 +282,6 @@ I am 18 or above!
       <button type="button" class="clear-favourites">Clear Favourites
       </button>
   </div>
-  <p class="hide text-white" id="no-search-warning">Please enter at least one search parameter</p>
     </section>
 
     <!-- added favourites bar here, can be moved where wanted. 
@@ -329,7 +333,7 @@ I am 18 or above!
         </ul>
       </div>
       <div class="col-lg-3 col-md-6 mb-4">
-        <h3 class="mb-1" style="letter-spacing: 2px; color: #c0fc51;">recommended hours</h3>
+        <h3 class="mb-1" style="letter-spacing: 2px; color: #c0fc51;">opening hours</h3>
         <table class="table" style="color: #f4e923; border-color: #f4e923;">
           <tbody>
             <tr>

@@ -99,16 +99,16 @@ ageConfirmBtn.on('click', () => {
      }
 
 // HOW IT WORKS? MODAL
-// let howItWorks = $('#how-it-works'); 
-// let howItWorksOpen = $('.instructions-open');
-// let howItWorksClose =$('.instructions-close'); 
+let howItWorks = $('#how-it-works'); 
+let howItWorksOpen = $('.instructions-open');
+let howItWorksClose =$('.instructions-close'); 
 
-// howItWorksOpen.on('click', () => {
-//     howItWorks.removeClass('hide'); 
-// }); 
-// howItWorksClose.on('click', () => {
-//     howItWorks.addClass('hide'); 
-// }); 
+howItWorksOpen.on('click', () => {
+    howItWorks.removeClass('hide'); 
+}); 
+howItWorksClose.on('click', () => {
+    howItWorks.addClass('hide'); 
+}); 
 
 // MISC ELEMENTS ON PAGE
 const nameInput = $('#search-box-name'); 
@@ -326,6 +326,21 @@ submitBtn.on('click', async (event) => {
     }
     clearSearchFunc(); 
 })
+
+// NUMBER OF RESULTS LIMITS
+numberInput.on('keydown', (event) => {
+    event.preventDefault(); 
+    let keyNum = parseInt(event.key); 
+    if (keyNum >= 5) {
+        numberInput.val('5');
+    } else if (keyNum <= 1) {
+        numberInput.val('1'); 
+    } else if (keyNum > 1 && keyNum < 5) {
+        numberInput.val(keyNum); 
+    } else {
+        return; 
+    }
+}); 
 
 // RANDOM CLICK LISTENER
 const randomBtn = $('.random')
