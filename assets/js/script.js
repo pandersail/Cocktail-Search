@@ -235,6 +235,21 @@ submitBtn.on('click', async (event) => {
     clearSearchFunc(); 
 })
 
+// NUMBER OF RESULTS LIMITS
+numberInput.on('keydown', (event) => {
+    event.preventDefault(); 
+    let keyNum = parseInt(event.key); 
+    if (keyNum >= 5) {
+        numberInput.val('5');
+    } else if (keyNum <= 1) {
+        numberInput.val('1'); 
+    } else if (keyNum > 1 && keyNum < 5) {
+        numberInput.val(keyNum); 
+    } else {
+        return; 
+    }
+}); 
+
 // RANDOM CLICK LISTENER
 const randomBtn = $('.random')
 randomBtn.on('click', () => {

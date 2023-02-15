@@ -53,6 +53,8 @@ i {
 #how-it-works {
   background: linear-gradient(10deg, rgb(53, 0, 83), rgb(101, 0, 114), rgb(143, 0, 179));
   width: 90%;
+  max-height: 90vh;
+  overflow: scroll;
   border-radius: 10px;
   margin: 0 auto; 
   padding: 20px; 
@@ -424,6 +426,9 @@ h3 {
  background: transparent;
  max-width: 250px;
 }
+#number-input{
+   padding: 0;
+}
 
 .form-control:active {
  box-shadow: 2px 2px 15px #8707ff inset;
@@ -527,32 +532,22 @@ display: block;
 
     /* MODAL */
     #agepopup{
-
-
 background-color: rgb(187, 93, 201); 
 position:fixed;
 border: 1px solid #888;
 cursor: pointer;
 border: 5px solid rgb(179, 23, 23);
 z-index: 100;
+    }; 
 
-
-
-    }
-
-    #confirm-age
-    {
+    #confirm-age {
 margin: 290px;
 height: 208px;
 width: 356px;
+    }; 
 
-    }
 h4 {
-
- 
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: #d91515;
   font-weight:bolder;
   font-size: larger;
-
 }

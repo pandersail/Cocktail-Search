@@ -1,5 +1,5 @@
-# Cocktail-Search-
-An app to search cocktail recipes
+# Cocktail-Search
+The home of cocktail recipes
 
 ## Preview
 
@@ -8,6 +8,53 @@ An app to search cocktail recipes
 https://daisyeverard.github.io/Cocktail-Search/
 
 ## Description
+
+Cocktail-Mix is a site for a bar of the same name which is used to search for cocktail recipes. 
+
+Features include:
+
+- Search for a cocktail by name, or a work included in the name
+- Search by an ingredient name, a category of drink, or a combined search of these two parameters
+- Choose how many results (max) to return
+
+- Click the `?` icon for an instructions popup
+- Use the `random` button to get a random recipe
+- Clear Results button
+
+- Heart icon for each recipe to add it to a favourites bar (max 5)
+- Favourites buttons have a cocktail name, and take you to it on click
+- Clear favourites button
+
+## Page Layout
+
+- When the page loads, a modal pops up asking you to confirm you are over 18
+- Header with Logo and Title
+- Jumbotron with Header Image
+
+- Search Section with title and `?` symbol to trigger a 'how it works' modal
+Search Parameters for:
+- cocktail name
+- ingredient
+- drink category
+- number of drinks to return
+
+Results Section, Each drink will have:
+- a preview photo
+- title
+- ingredients
+- recipe
+- favourite button
+
+Buttons bar with:
+- Shake: run a search
+- Random: give a random drink recipe
+- Clear Results
+- Clear Favourites
+
+Footer:
+- 'About us' style info about the bar
+- links section
+- Opening Hours
 
 ## List of Technologies Used
 
@@ -21,18 +68,24 @@ https://daisyeverard.github.io/Cocktail-Search/
 
 ## About our Team
 
-Hani Ahmed, Clarissa Cole, Angelo Silva, Daisy Everard
+- Hani Ahmed [@haniahmed98](https://www.github.com/haniahmed98)
+- Clarissa Cole [@RissaC2](https://www.github.com/RissaC2)
+- Angelo Silva [@pandersail](https://www.github.com/pandersail)
+- Daisy Everard [@DaisyEverard](https://www.github.com/DaisyEverard)
 
 Please Note - Some members of our team were unable to attend all of the project sessions, so in some places there is an uneven balance of commits. 
 
 ## Credits
-Hero image - Photo by energepic.com: https://www.pexels.com/photo/selective-blur-of-2-wine-glass-and-3-drinking-glass-110472/
+Hero image - Photo by energepic.com:
+ https://www.pexels.com/photo/selective-blur-of-2-wine-glass-and-3-drinking-glass-110472/
 
-Icon - Vitaly Gorbachev https://www.flaticon.com/free-icon/cocktail_3086535?term=cocktail&page=1&position=6&origin=search&related_id=3086535
+Icon - Vitaly Gorbachev 
+https://www.flaticon.com/free-icon/cocktail_3086535?term=cocktail&page=1&position=6&origin=search&related_id=3086535
 
 cocktail shaker icon - Freepik
 
-cocktail placeholder result image - Photo by Antonio Jose Meza Cárdenas: https://www.pexels.com/photo/blue-margarita-with-lemon-2480828/
+cocktail placeholder result image - Photo by Antonio Jose Meza Cárdenas:
+https://www.pexels.com/photo/blue-margarita-with-lemon-2480828/
 
 
 ## Wireframe
