@@ -6,6 +6,7 @@ body {
   color: #ffffff;
 }
 
+
 .hide {
   display: none !important;
 }
@@ -660,9 +661,9 @@ display: block;
 }
 
 /* AGE CONFIRM MODAL */
-
+/* 
 #agepopup {
-  background-color: #d91515;
+  background-color: #8c80e5;
   position: fixed;
   top: 20px;
   left: 20px;
@@ -674,14 +675,15 @@ display: block;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: 5px solid rgb(179, 23, 23);
+  border: 1px solid var(--bg);
+  border-radius: 4px;
+    padding: 0.4em 1em;
   z-index: 100;
+  
 }
 #agepopup h4 {
-  color: black;
-  font-size: 2em;
-  letter-spacing: 0.1rem;
-  font-weight: normal;
+  color: #f4e923;
+  font-family: 'Convergence';
 }
 #agepopup p {
   font-weight: bold;
@@ -691,13 +693,14 @@ display: block;
   padding: 10px;
   height: 39px;
   width: 113px;
-} */
+} 
 
 #verify-box {
   height: 53px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 10px;
 }
 
 #confirm-age:hover {
@@ -706,13 +709,35 @@ display: flex;
   width: 113px;
   justify-content: center;
   align-items: center;
+  padding-bottom: 10px;
 }
 #agepopup button {
-   background-color: black;
-   border-radius: 5px;
-   color: white;
-   font-weight: bold;
+  padding-top: 10px;
+  --bg: #e5cb1e;
+  --hover-bg: #ff90e8;
+  --hover-text: #000;
+  color: #fff;
+  border: 1px solid var(--bg);
+  border-radius: 4px;
+  padding: 0.4em 1em;
+  background: var(--bg);
+  transition: 0.2s;
+  color: #8c80e5;
+  font-weight: bolder;
+  font-size: 22px;
 }
+#agepopup button:hover {
+  color: var(--hover-text);
+  transform: translate(-0.25rem,-0.25rem);
+  background: var(--hover-bg);
+  box-shadow: 0.25rem 0.25rem var(--bg);
+}
+
+#agepopup button:active {
+  transform: translate(0);
+  box-shadow: none;
+} */
+
 
 h4 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;

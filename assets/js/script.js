@@ -1,27 +1,27 @@
 // AGE CONFIRM POPUP (MODAL)
-let agePopup = $('#agepopup'); 
-let ageConfirmBtn = $('#confirm-age'); 
-let dobInput = $('#date-input');
+// let agePopup = $('#agepopup'); 
+// let ageConfirmBtn = $('#confirm-age'); 
+// let dobInput = $('#date-input');
 
-ageConfirmBtn.on('click', () => {
-    let dob =  moment(dobInput.val(), 'YYYY-MM-DD');
-    let today = moment();
-    let difference = moment.duration(today.diff(dob)); 
-    let age = difference['_data']['years']
+// ageConfirmBtn.on('click', () => {
+//     let dob =  moment(dobInput.val(), 'YYYY-MM-DD');
+//     let today = moment();
+//     let difference = moment.duration(today.diff(dob)); 
+//     let age = difference['_data']['years']
 
-    if (age >= 18)  {
-        agePopup.addClass('hide'); 
-        localStorage.setItem('userDOB', JSON.stringify(age))
-    } else {
-        window.location.href = 'https://www.thespruceeats.com/summer-drinks-for-kids-4165867'
-    }
-}); 
+//     if (age >= 18)  {
+//         agePopup.addClass('hide'); 
+//         localStorage.setItem('userDOB', JSON.stringify(age))
+//     } else {
+//         window.location.href = 'https://www.thespruceeats.com/summer-drinks-for-kids-4165867'
+//     }
+// }); 
 
-// don't show popup if already entered once
-let storedAge = JSON.parse(localStorage.getItem('userDOB'));
-    if (storedAge && storedAge >= 18) {
-        agePopup.addClass('hide');
-    }; 
+// // don't show popup if already entered once
+// let storedAge = JSON.parse(localStorage.getItem('userDOB'));
+//     if (storedAge && storedAge >= 18) {
+//         agePopup.addClass('hide');
+//     }; 
 
 // HOW IT WORKS? MODAL
 let howItWorks = $('#how-it-works'); 
