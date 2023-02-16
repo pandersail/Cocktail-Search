@@ -81,6 +81,7 @@ Footer:
 - jQuery
 - Git and Github
 - Moment.js
+- using API - [TheCocktailDB](https://www.thecocktaildb.com/api.php)
 
 ## About our Team
 
