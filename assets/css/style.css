@@ -490,6 +490,11 @@ display: block;
 
 }
 
+.col h4 {
+  font-family: Sansita;
+  color: #f4e923;
+}
+
 
 /* favourite icon */
 .favourite-btn {
@@ -576,10 +581,6 @@ display: block;
             width: 20vw;
             height: auto;
      }
-    .col h4 {
-            font-family: Sansita;
-            color: #f4e923;
-        }
 }
 
 @media (max-width: 768px) {
@@ -602,10 +603,6 @@ display: block;
             width: 70vw;
             height: auto;
      }
-    .col h4 {
-            font-family: Sansita;
-            color: #f4e923;
-        }
 }
 
 @media (max-width: 600px) {
@@ -628,11 +625,6 @@ display: block;
         width: 80vw;
             height: auto;
     }
-    
-    .col h4 {
-            font-family: Sansita;
-            color: #f4e923;
-        } 
 }
         
 /* footer */

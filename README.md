@@ -1,11 +1,21 @@
 # Cocktail-Search
 The home of cocktail recipes
 
-## Preview
-
 ## Link to site
 
 https://daisyeverard.github.io/Cocktail-Search/
+
+## Preview
+
+<p align="center">Large Screen</p>
+<p align="center">
+  <img src="./assets/images/preview-laptop.png" width="500" alt="screenshot of site on large screen">
+</p>
+<p align="center">Mobile (split into two)</p>
+<p align="center">
+<img src="./assets/images/preview-mobile-1.png" width="200" alt="screenshot of site on mobile - part 1">
+  <img src="./assets/images/preview-mobile-2.png" width="200" alt="screenshot of site on mobile - part 2">
+</p>
 
 ## Description
 
@@ -20,6 +30,7 @@ Features include:
 - Search for a cocktail by name, or a work included in the name
 - Search by an ingredient name, a category of drink, or a combined search of these two parameters
 - Choose how many results (max) to return
+- User can only enter numbers between max and min value (1-5) in how many results input
 
 - Click the `?` icon for an instructions popup
 - Use the `random` button to get a random recipe
@@ -69,6 +80,7 @@ Footer:
 - JavaScript
 - jQuery
 - Git and Github
+- Moment.js
 
 ## About our Team
 
