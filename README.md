@@ -20,6 +20,7 @@ Features include:
 - Search for a cocktail by name, or a work included in the name
 - Search by an ingredient name, a category of drink, or a combined search of these two parameters
 - Choose how many results (max) to return
+- User can only enter numbers between max and min value (1-5)
 
 - Click the `?` icon for an instructions popup
 - Use the `random` button to get a random recipe
