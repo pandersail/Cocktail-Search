@@ -49,15 +49,18 @@ i {
 
 
 .instructions-close {
-    --bg: #000;
+    --bg: #e5cb1e;
     --hover-bg: #ff90e8;
     --hover-text: #000;
     color: #fff;
     border: 1px solid var(--bg);
     border-radius: 4px;
-    padding: 0.8em 2em;
+    padding: 0.4em 1em;
     background: var(--bg);
     transition: 0.2s;
+    color: #8c80e5;
+    font-weight: bolder;
+    font-size: 22px;
   }
   
   .instructions-close:hover {
@@ -73,7 +76,7 @@ i {
   }
 
 #how-it-works {
-  background: #4ccaf0;
+  background: #8c80e5;
   width: 90%;
   max-height: 90vh;
   overflow: scroll;
@@ -191,7 +194,7 @@ label {
   color: #c0fc51;
   border: 2px solid #8c80e5;
   border-radius: 10px;
-  padding: 4px 17px;
+  padding: 4px 17px !important;
   margin-left: 20px;
   margin-bottom: 20px;
   background: transparent;
