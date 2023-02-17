@@ -1,9 +1,13 @@
 /* global */
 body {
   background-image: linear-gradient(64.5deg, rgba(245, 116, 185, 1) 14.7%, rgba(89, 97, 223, 1) 88.7%);
+  width: auto;
+  background-size: calc(max(100%, 400px));
+  height: auto;
   font-size: 16px;
   font-family: Khula;
   color: #ffffff;
+  min-width: 391px
 }
 
 
@@ -228,6 +232,7 @@ label {
 #buttons {
   display: flex;
   padding: 10px 10px 10px 20px;
+  min-width: 391px
 }
 
 .submit-btn {
@@ -298,7 +303,7 @@ label {
   color: #ffffff;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
+  overflow:hidden;
   transition: all 0.3s;
   border-radius: 12px;
   background-color: #c188f3;
